@@ -1,5 +1,5 @@
 ---
-title:Git 本地工作流
+title: Git 本地工作流
 ---
 
 git init 
