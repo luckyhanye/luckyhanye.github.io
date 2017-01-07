@@ -5,11 +5,11 @@
 body{
 	background-color: #ccc;
 }
-.header{
+.header,footer{
 	background-color: teal;
 	/*line-height: 30px;*/
 }
-.heaer-inner{
+.heaer-inner,.footer-inner{
 	min-width: 960px;
 }
 .header h1{
@@ -26,7 +26,7 @@ body{
 	margin: 0 auto;
 	margin-top: 50px;
 	padding-top: 20px;
-	padding-bottom:30px;
+	padding-bottom:80px;
 }
 h3{
 	font-family: times,"宋体";
@@ -67,4 +67,13 @@ table tr .change{
 	color:white;
 	font-style: normal;
 	font-size: 20px;
+}
+.footer-inner{
+	height: 60px;
+	margin-top: 50px;
+}
+.footer-inner p{
+	color:white;
+	line-height: 60px;
+	text-align:center;
 }
