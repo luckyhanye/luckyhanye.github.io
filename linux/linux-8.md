@@ -16,7 +16,7 @@ title: 上传代码到 Github.com
 ##### 如何删除一个 github.com 的仓库呢？
 
 
-首先到[仓库页面](https://github.com/luckyhanye/luckyhanye.github.io)
+首先到**仓库页面:https://github.com/luckyhanye/luckyhanye.github.io**
 
 点 Settings（设置）这一个标签。打开的页面底部有一个 “Delete this repository” 按钮，意思是”删除这个仓库“，点击按钮。打开的界面中，输入一下这个仓库的名字 happypeter.github.io 就可以把这个仓库删除了。
 
@@ -55,7 +55,7 @@ or push an existing repository from the command line
 到本地命令行，进入我们的本地项目文件夹
 
 cd happypeter.github.io
-然后执行下面两步：
+**然后执行下面两步：**
 
 git remote add origin git@github.com:funnydeer/funnydeer.github.io.git
 git push -u origin master
@@ -106,7 +106,8 @@ git 各个命令的作用
 git push 把本地仓库中有，而远端对应仓库中没有的版本推送到远端
 git pull 把远端仓库中有，而本地对应仓库中没有的版本拉到本地
 git clone 把远端仓库，克隆到本地
-学习 Github/Git 的学习目标
+
+##### 学习 Github/Git 的学习目标
 
 知道 git 是版本控制工具
 每个同学要有一个 github 仓库
@@ -123,9 +124,9 @@ git clone 把远端仓库，克隆到本地
 版本控制 Git/Github
 其实呢，这三个工具的学习都不能一蹴而就，都是在实际写代码过程中逐步完善的。但是这里 Peter 有三门课程可以推荐：
 
-Atom 爱上 JS
-驾驭命令行怪兽
-Git 北京
-以上三门课程，大家可以根据自己所处的阶段，有选择的学习里面的部分章节。
+>Atom 爱上 JS
+>驾驭命令行怪兽
+>Git 北京
+*以上三门课程，大家可以根据自己所处的阶段，有选择的学习里面的部分章节。*
 
 学习上面三大工具的目的，就是为了更加高效的写代码 。
