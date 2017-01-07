@@ -1,4 +1,5 @@
 ---
+layout: linux
 title: 上传代码到 Github.com
 ---
 
