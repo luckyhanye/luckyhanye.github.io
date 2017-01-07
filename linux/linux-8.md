@@ -13,7 +13,7 @@ title: 上传代码到 Github.com
 准备工作：删除第一天创建的项目
 
 
-如何删除一个 github.com 的仓库呢？
+##### 如何删除一个 github.com 的仓库呢？
 
 
 首先到仓库页面：https://github.com/happypeter/happypeter.github.io
