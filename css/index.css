@@ -9,7 +9,7 @@ body{
 	background-color: teal;
 	/*line-height: 30px;*/
 }
-.heaer-inner,.footer-inner{
+.header-inner,.footer-inner{
 	min-width: 960px;
 }
 .header h1{
