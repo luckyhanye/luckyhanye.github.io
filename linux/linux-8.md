@@ -16,7 +16,7 @@ title: 上传代码到 Github.com
 ##### 如何删除一个 github.com 的仓库呢？
 
 
-首先到仓库页面：https://github.com/happypeter/happypeter.github.io
+首先到[仓库页面](https://github.com/luckyhanye/luckyhanye.github.io)
 
 点 Settings（设置）这一个标签。打开的页面底部有一个 “Delete this repository” 按钮，意思是”删除这个仓库“，点击按钮。打开的界面中，输入一下这个仓库的名字 happypeter.github.io 就可以把这个仓库删除了。
 
@@ -24,7 +24,7 @@ title: 上传代码到 Github.com
 
 如何把本地的已有仓库，上传到 github.com
 
-第一步：创建本地项目
+**第一步：创建本地项目**
 
 项目名称是任意的，但是我们这里想做的事情是上传比较，所以，本地这个仓库名，也必须是：
 
@@ -35,11 +35,11 @@ mkdir happypeter.github.io
 
 拷贝进来的内容，要符合第一天我们介绍的 github pages 的格式规范（其实最重要的一点就是每个 .md 文件中都要有头部，参考第一天我们的文档中的介绍）。
 
-第二步：创建 github.com 上的同名仓库
+**第二步：创建 github.com 上的同名仓库**
 
 到 github.com 上点 New repository 按钮，新建一个项目， 项目名叫做 happypeter.github.io 。
 
-注意，不要勾选任何选项，尤其是不能默认创建 README.md 文件。
+--注意，不要勾选任何选项，尤其是不能默认创建 README.md 文件。--
 
 创建完成之后，页面上有两个选择，其中第二个是
 
