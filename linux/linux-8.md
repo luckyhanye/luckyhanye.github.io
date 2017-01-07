@@ -5,11 +5,16 @@ title: 上传代码到 Github.com
 
 ### 上传代码到 Github.com
 
+
+
 前面学会了如何在本地用 git 创建项目版本，本节咱们看看咋把新版本上传到 github.com 之上。
+
 
 准备工作：删除第一天创建的项目
 
+
 如何删除一个 github.com 的仓库呢？
+
 
 首先到仓库页面：https://github.com/happypeter/happypeter.github.io
 
