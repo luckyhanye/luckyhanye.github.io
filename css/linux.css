@@ -20,8 +20,7 @@ body{
 }
 h3{
 	color:#f8a059;
-	line-height: 30px;
-	margin-top: 20px;
+	line-height: 20px;
 	text-align:center;
 }
 section{
@@ -29,8 +28,8 @@ section{
 	margin: 0 auto;
 	background-color: white;
 	box-shadow:3px 3px 3px #919799;
-	padding-top: 20px;
-	padding-bottom:50px;
+	padding:30px;
+	padding-bottom: 50px;
 	/*border-radius: 6px;*/
 }
 
