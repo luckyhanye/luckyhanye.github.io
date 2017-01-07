@@ -20,6 +20,14 @@ body{
 }
 h3{
 	color:#f8a059;
+
+}
+section{
+	width: 800px;
+	margin: 0 auto;
+	background-color: white;
+	box-shadow:3px 3px 3px #919799;
+	border-radius: 6px;
 }
 
 
