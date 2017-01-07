@@ -18,6 +18,12 @@ body{
 	color:white;
 	text-align:center;
 }
+h3{
+	color:#f8a059;
+}
+
+
+
 .footer-inner{
 	height: 60px;
 	margin-top: 50px;
@@ -26,7 +32,4 @@ body{
 	color:white;
 	line-height: 60px;
 	text-align:center;
-}
-h3{
-	color:#f8a059;
 }
