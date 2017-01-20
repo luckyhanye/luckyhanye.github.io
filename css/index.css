@@ -18,6 +18,9 @@ body{
 	color:white;
 	text-align:center;
 }
+.header h1:hover{
+	color:#ffc37b;
+}
 .main{
 	width: 800px;
 	border-radius: 5px;
@@ -43,7 +46,7 @@ tr td{
 	line-height: 60px;
 	border:1px solid #ccc;
 	color:black;
-	
+
 }
 tr td:first-child{
 	text-align:center;

@@ -3,9 +3,9 @@ title: linux
 title: 上传代码到 Github.com
 ---
 
-# 上传代码到 Github.com
+## 上传代码到 Github.com
 
-前面学会了如何在本地用 git 创建项目版本，本节咱们看看咋把新版本上传到 github.com 之上。
+    前面学会了如何在本地用 git 创建项目版本，本节咱们看看咋把新版本上传到 github.com 之上。
 
 
 ### 准备工作：删除第一天创建的项目
@@ -25,7 +25,9 @@ title: 上传代码到 Github.com
 项目名称是任意的，但是我们这里想做的事情是上传比较，所以，本地这个仓库名，也必须是：
 
 ```
+
 mkdir happypeter.github.io
+
 ```
 
 本地项目名要和 github.com 我们一会儿要创建的仓库名保持一致。
