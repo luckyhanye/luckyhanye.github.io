@@ -63,11 +63,14 @@ pre{
 	border:1px solid #ccc;
 	margin:20px 0;
 	opacity:0.5;
-	color:black;
+	color:#00a7cf;
 }
 ul{
 	padding-left: 30px;
-	color:black;
+
+}
+ul li{
+	line-height: 20px;
 }
 section p a{
 	text-decoration:none;
@@ -75,7 +78,7 @@ section p a{
 blockquote{
 	background-color: #badce6;
 	border-radius:5px;
-	color:#8A6D3B;
+	color:#f59358;
 	padding: 15px 30px;
 	margin-bottom: 20px;
 	opacity:0.6;

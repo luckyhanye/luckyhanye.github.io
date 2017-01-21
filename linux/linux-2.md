@@ -55,9 +55,9 @@ Bash 的常用命令：
 cd Desktop
 mkdir FolderName
 ```
-上面 > cd Desktop 改变当前位置到桌面。
+上面 `cd Desktop` 改变当前位置到桌面。
 
-> mkdir 是创建一个文件夹的命令
+`mkdir` 是创建一个文件夹的命令
 
 最终操作结果是等价的。但是如果要学习命令行操作，第一步就是要掌握文件系统结构。
 
