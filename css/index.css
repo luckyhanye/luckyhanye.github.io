@@ -76,7 +76,8 @@ table tr .change{
 	margin-top: 50px;
 }
 .footer-inner p{
-	color:white;
+	font-size: 18px;
+	color:#ccc;
 	line-height: 60px;
 	text-align:center;
 }
