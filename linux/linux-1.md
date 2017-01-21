@@ -84,18 +84,14 @@ markdown 中，如果写成下面这样，最终显示的效果就是有语法�
 ```js
 console.log('hello');
 console.log('hello');
-
 console.log('hello');
-
 console.log('hello');
-
 ```
 
 ```css
 body {
   background: red;
 }
-
 ```
 
 上面的内容会最终显示为：
@@ -110,7 +106,6 @@ console.log('hello');
 body {
   background: red;
 }
-
 ```
 
 
@@ -128,7 +123,6 @@ body {
 ---
 title: 我的这篇文章的标题
 ---
-
 ```
 
 具体操作步骤
@@ -144,7 +138,6 @@ title: 我的这篇文章的标题
     <a href="2-second.html">第二篇文章</a>
   </li>
 </ul>
-
 ```
 
 
@@ -157,7 +150,6 @@ title: 我的这篇文章的标题
 ---
 title: 我的第一篇文章
 ---
-
 ```
 
 ### 第一篇第一个大标题
