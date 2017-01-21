@@ -52,6 +52,10 @@ section h3{
 	color:#14877E;
 	line-height: 3.5em;
 }
+section h4{
+	font-size: 16px;
+	color:#14877E;
+}
 pre{
 	padding: 15px;
 	background-color: #fff5d7;
@@ -60,16 +64,22 @@ pre{
 	margin:20px 0;
 	opacity:0.5;
 	color:black;
-
 }
-
-/*blockquote{
+ul{
+	margin-left: 20px;
+	font-style: italic;
+}
+section p a{
+	display:block;
+	text-decoration:none;
+}
+blockquote{
 	background-color: #FCF8E3;
 	border-radius:5px;
-	color:color: #8A6D3B;
+	color:#8A6D3B;
 	padding: 15px 30px;
 	margin-bottom: 20px;
-}*/
+}
 
 footer{
 	background-image: url(../images/contact_03.jpg);
