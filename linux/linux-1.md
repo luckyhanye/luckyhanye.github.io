@@ -80,37 +80,34 @@ Mardown 中添加语法高亮
 markdown 中，如果写成下面这样，最终显示的效果就是有语法高亮的：
 
 ```js
+console.log('hello');
+console.log('hello');
 
-    console.log('hello');
-    console.log('hello');
+console.log('hello');
 
-    console.log('hello');
-
-    console.log('hello');
+console.log('hello');
 
 ```
 
 ```css
-
-    body {
-      background: red;
-    }
+body {
+  background: red;
+}
 
 ```
 
 上面的内容会最终显示为：
 
 ```
+console.log('hello');
+console.log('hello');
 
-    console.log('hello');
-    console.log('hello');
+console.log('hello');
 
-    console.log('hello');
-
-    console.log('hello');
-    body {
-      background: red;
-    }
+console.log('hello');
+body {
+  background: red;
+}
 
 ```
 
@@ -126,10 +123,9 @@ markdown 中，如果写成下面这样，最终显示的效果就是有语法�
 头部格式如下：
 
 ```
-
-    ---
-    title: 我的这篇文章的标题
-    ---
+---
+title: 我的这篇文章的标题
+---
 
 ```
 
@@ -138,15 +134,14 @@ markdown 中，如果写成下面这样，最终显示的效果就是有语法�
 到 happypeter.github.io 的项目仓库中，首先在 index.html 中添加如下内容：
 
 ```
-
-    <ul>
-      <li>
-        <a href="1-first.html">第一篇文章</a>
-      </li>
-      <li>
-        <a href="2-second.html">第二篇文章</a>
-      </li>
-    </ul>
+<ul>
+  <li>
+    <a href="1-first.html">第一篇文章</a>
+  </li>
+  <li>
+    <a href="2-second.html">第二篇文章</a>
+  </li>
+</ul>
 
 ```
 
@@ -157,10 +152,9 @@ markdown 中，如果写成下面这样，最终显示的效果就是有语法�
 里面添加这些内容：
 
 ```
-
-    ---
-    title: 我的第一篇文章
-    ---
+---
+title: 我的第一篇文章
+---
 
 ```
 
