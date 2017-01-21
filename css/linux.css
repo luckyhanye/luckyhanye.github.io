@@ -55,9 +55,10 @@ section h3{
 pre{
 	padding: 15px;
 	background-color: #fff5d7;
-	border-radius: 10px;
+	border-radius: 8px;
+	border:1px solid #ccc
 	margin:20px 0;
-	opacity:0.6;
+	opacity:0.5;
 	color:black;
 }
 
