@@ -54,6 +54,7 @@ section h3{
 section h4{
 	font-size: 16px;
 	color:#14877E;
+	line-height: 25px;
 }
 pre{
 	padding: 15px;
@@ -66,17 +67,18 @@ pre{
 }
 ul{
 	padding-left: 30px;
-	font-style: italic;
+	color:black;
 }
 section p a{
 	text-decoration:none;
 }
 blockquote{
-	background-color: #FCF8E3;
+	background-color: #badce6;
 	border-radius:5px;
 	color:#8A6D3B;
 	padding: 15px 30px;
 	margin-bottom: 20px;
+	opacity:0.6;
 }
 
 footer{
