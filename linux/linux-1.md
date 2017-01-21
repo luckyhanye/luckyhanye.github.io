@@ -17,9 +17,9 @@ Email 这一项，必须填写真实有效的邮箱，不然注册不了
 
 Choose your personal Plan ? 选择你的付费方案
 
-免费版：无限使用权限，只能发布开源项目
+> 免费版：无限使用权限，只能发布开源项目
 
-收费版：允许发布闭源项目
+> 收费版：允许发布闭源项目
 
 邮箱中点链接之后，就可以自动跳转回 github.com 的页面上，同时显示
 
@@ -52,7 +52,7 @@ Initialize this repository with a README 初始化项目的时候，自动添加
 
 添加一些基本的 html 内容进 index.html ，然后点 “Commit New File” 进行保存。
 
->注意：新添加的内容，不一定立刻能显示到 happypeter.github.io ，可能会有五六分钟的延迟。
+> 注意：新添加的内容，不一定立刻能显示到 happypeter.github.io ，可能会有五六分钟的延迟。
 
 用 Markdown 来记笔记
 
