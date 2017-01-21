@@ -5,9 +5,11 @@ layout: linux
 
 ## Github pages 创建个人网站
 
-Github.com 是程序员存放代码的一个网站。Github Pages 是 Github 提供的一项服务，可以免费的帮助我们托管网站。
+Github.com 是程序员存放代码的一个网站。
 
-注册 Github 账号
+Github Pages 是 Github 提供的一项服务，可以免费的帮助我们托管网站。
+
+### 注册 Github 账号
 
 点 github.com 首页的 Sign Up （注册）按钮，进行注册。
 

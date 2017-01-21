@@ -37,7 +37,7 @@ section{
 }
 section h2{
 	font-size: 18px;
-	color:#14877E;
+	color:#f08324;
 	line-height: 50px;
 	text-align:center;
 }
@@ -46,7 +46,7 @@ section h3{
 	color:#14877E;
 	line-height: 1.5em;
 }
-ul{
+pre{
 	padding: 8px;
 	background-color: #f7e0a5;
 }
