@@ -5,7 +5,7 @@
 body{
 	background-color: #f3ebdc;
 }
-.header,footer{
+.header{
 	background-color: teal;
 	/*line-height: 30px;*/
 }
@@ -30,13 +30,12 @@ section{
 	padding:45px;
 	padding-top: 30px;
 	padding-bottom: 50px;
-	color:#64686a;
-	font-size: 15px;
-	line-height: 36px;
-	/*border-radius: 6px;*/
 }
 section p{
+	color:#64686a;
 	font-family: "微软雅黑","黑体";
+	font-size: 15px;
+	line-height: 36px;
 }
 section h2{
 	font-family: "宋体";
@@ -66,7 +65,7 @@ pre{
 	color:black;
 }
 ul{
-	margin-left: 20px;
+	padding-left: 30px;
 	font-style: italic;
 }
 section p a{
