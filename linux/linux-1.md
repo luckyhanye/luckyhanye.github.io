@@ -56,7 +56,7 @@ Initialize this repository with a README 初始化项目的时候，自动添加
 
 > 注意：新添加的内容，不一定立刻能显示到 happypeter.github.io ，可能会有五六分钟的延迟。
 
-用 Markdown 来记笔记
+### 用 Markdown 来记笔记
 
 Markdown 跟 HTML 一样，是一种标签语言。但是 Markdown 语法特别简单，适合用来做笔记。
 
@@ -80,7 +80,7 @@ Mardown 语法不是浏览器能直接支持的，所以需要先把 Mardown 语
 
 > 注意，添加内容的文件名，无所谓，但是后缀一定要 .md 不然无法编译成功
 
-Mardown 中添加语法高亮
+### Mardown 中添加语法高亮
 
 什么是语法高亮？ 如果一段代码没有语法高亮，那么就是所有的字符都显示成一个颜色。但是通常编辑器中有语法高亮，也就是不同语法作用的字符串会显示成不同的颜色。
 
