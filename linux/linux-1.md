@@ -70,9 +70,11 @@ Mardown 语法不是浏览器能直接支持的，所以需要先把 Mardown 语
 
 例如，我们在 README.md 中填写
 
+```
 [百度](http://baidu.com)
 
 <a href="http://baidu.com">百度</a>
+```
 
 提交保存之后，页面显示出完全一样的链接效果。
 
