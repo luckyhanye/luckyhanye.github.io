@@ -37,8 +37,8 @@ username.github.io
 happypeter.github.io
 Description (optional) 项目描述（可选项）
 
-Public: 开源项目
-Private：闭源项目
+> Public: 开源项目
+> Private：闭源项目
 Initialize this repository with a README 初始化项目的时候，自动添加一个 README 文件
 我们这里勾选上这一项。
 
@@ -52,7 +52,7 @@ Initialize this repository with a README 初始化项目的时候，自动添加
 
 Markdown 跟 HTML 一样，是一种标签语言。但是 Markdown 语法特别简单，适合用来做笔记。
 
-Markdown 语法参考
+* Markdown 语法参考
 Mardown 语法不是浏览器能直接支持的，所以需要先把 Mardown 语法写成的内容，编译成 HTML ，才能美观的显示出来。
 
 那么 Github 就提供了这个编译环境。到 Github 上我们的项目中，有一个文件叫 README.md 这里 md 就是 markdown 的缩写。
@@ -75,18 +75,22 @@ Mardown 中添加语法高亮
 markdown 中，如果写成下面这样，最终显示的效果就是有语法高亮的：
 
 ```js
+
 console.log('hello');
 console.log('hello');
 
 console.log('hello');
 
 console.log('hello');
+
 ```
 
 ```css
+
 body {
   background: red;
 }
+
 ```
 上面的内容会最终显示为：
 
@@ -116,6 +120,7 @@ body {
 头部格式如下：
 
 ```
+
 ---
 title: 我的这篇文章的标题
 ---
@@ -127,6 +132,7 @@ title: 我的这篇文章的标题
 到 happypeter.github.io 的项目仓库中，首先在 index.html 中添加如下内容：
 
 ```
+
 <ul>
   <li>
     <a href="1-first.html">第一篇文章</a>
@@ -145,6 +151,7 @@ title: 我的这篇文章的标题
 里面添加这些内容：
 
 ```
+
 ---
 title: 我的第一篇文章
 ---
