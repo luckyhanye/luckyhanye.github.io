@@ -1,5 +1,6 @@
 ---
 title: Github pages 创建个人网站
+layout: linux
 ---
 
 ### Github pages 创建个人网站

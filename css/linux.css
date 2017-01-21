@@ -19,7 +19,7 @@ body{
 	text-align:center;
 }
 .header h1:hover{
-	color:#f0a055;
+	color:#ffc37b;
 }
 
 section{
@@ -50,11 +50,25 @@ section h3{
 	margin-bottom: 20px;
 }*/
 
-.footer-inner{
-	height: 60px;
+footer{
+	background-image: url(../images/contact_03.jpg);
+	margin-top: 30px;
 }
-.footer-inner p{
-	color:white;
+.footer-inner{
+	/*height: 90px;*/
+	padding-top: 40px;
+	padding-bottom:60px;
+}
+.footer-inner a{
+	display:block;
+	text-decoration:none;
+	font-family: times;
+	font-size: 18px;
+	font-style:italic;
+	color:#9fa2a3;
 	line-height: 60px;
 	text-align:center;
+}
+.footer-inner a:hover{
+	color:#feafbc;
 }
