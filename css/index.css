@@ -5,7 +5,7 @@
 body{
 	background-color: #ccc;
 }
-.header,footer{
+.header{
 	background-color: teal;
 	/*line-height: 30px;*/
 }
@@ -71,12 +71,16 @@ table tr .change{
 	font-style: normal;
 	font-size: 20px;
 }
+footer{
+	background-images：url(images/contact_03.jpg);
+}
 .footer-inner{
-	height: 60px;
+	/*height: 90px;*/
 	margin-top: 50px;
 }
 .footer-inner p{
-	font-size: 18px;
+	font-family: times;
+	font-size: 16px;
 	color:#ccc;
 	line-height: 60px;
 	text-align:center;
