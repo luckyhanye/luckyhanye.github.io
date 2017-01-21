@@ -72,17 +72,24 @@ table tr .change{
 	font-size: 20px;
 }
 footer{
-	background-image: url(./images/contact_03.jpg);
+	background-image: url(../images/contact_03.jpg);
+	margin-top: 30px;
 }
 .footer-inner{
-	height: 90px;
-	padding-top: 50px;
+	/*height: 90px;*/
+	padding-top: 40px;
 	padding-bottom:60px;
 }
-.footer-inner p{
+.footer-inner a{
+	display:block;
+	text-decoration:none;
 	font-family: times;
-	font-size: 16px;
-	color:blue;
+	font-size: 18px;
+	font-style:italic;
+	color:#9fa2a3;
 	line-height: 60px;
 	text-align:center;
+}
+.footer-inner a:hover{
+	color:#feafbc;
 }

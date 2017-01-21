@@ -39,6 +39,7 @@ Description (optional) 项目描述（可选项）
 
 > Public: 开源项目
 > Private：闭源项目
+
 Initialize this repository with a README 初始化项目的时候，自动添加一个 README 文件
 我们这里勾选上这一项。
 
@@ -76,35 +77,35 @@ markdown 中，如果写成下面这样，最终显示的效果就是有语法�
 
 ```js
 
-console.log('hello');
-console.log('hello');
+    console.log('hello');
+    console.log('hello');
 
-console.log('hello');
+    console.log('hello');
 
-console.log('hello');
+    console.log('hello');
 
 ```
 
 ```css
 
-body {
-  background: red;
-}
+    body {
+      background: red;
+    }
 
 ```
 上面的内容会最终显示为：
 
 ```
 
-console.log('hello');
-console.log('hello');
+    console.log('hello');
+    console.log('hello');
 
-console.log('hello');
+    console.log('hello');
 
-console.log('hello');
-body {
-  background: red;
-}
+    console.log('hello');
+    body {
+      background: red;
+    }
 
 ```
 
@@ -121,9 +122,9 @@ body {
 
 ```
 
----
-title: 我的这篇文章的标题
----
+    ---
+    title: 我的这篇文章的标题
+    ---
 
 ```
 
@@ -133,14 +134,14 @@ title: 我的这篇文章的标题
 
 ```
 
-<ul>
-  <li>
-    <a href="1-first.html">第一篇文章</a>
-  </li>
-  <li>
-    <a href="2-second.html">第二篇文章</a>
-  </li>
-</ul>
+    <ul>
+      <li>
+        <a href="1-first.html">第一篇文章</a>
+      </li>
+      <li>
+        <a href="2-second.html">第二篇文章</a>
+      </li>
+    </ul>
 
 ```
 
@@ -152,13 +153,14 @@ title: 我的这篇文章的标题
 
 ```
 
----
-title: 我的第一篇文章
----
+    ---
+    title: 我的第一篇文章
+    ---
 
 ```
 
 ### 第一篇第一个大标题
+
 上面:后面留一个空格，头部下方留出一个空行，然后再写 markdown 正文
 
 注意：头部千万不能敲错，不然网站就不更新了。例如，A.md 文件中 头部敲错了，即使后续再创建一个 B.md 文件，里面添加了头部，网站也不会更新。除非先把 A.md 中的头部修改好。
