@@ -65,6 +65,6 @@ Linus 是芬兰人，他父亲是政治家（共产主义者）。Linus 在大�
 
 Linus 的书《 Coding For Fun 》。
 
-#### 参考
+### 参考
 
-- 驾驭命令行怪兽
+- [驾驭命令行怪兽](http://haoqicat.com/ride-cli-monster)

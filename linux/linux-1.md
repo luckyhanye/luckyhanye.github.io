@@ -170,6 +170,6 @@ title: 我的第一篇文章
 
 总结一下，虽然很多 github pages 的知识我们还没有介绍，但是有了上面的这些技巧已经完全可以胜任记笔记的工作了。当然如果想让笔记好看，就添加 CSS 进来。
 
-#### 更多技巧参考
+###更多技巧参考
 
 - [digicity](https://github.com/happypeter/digicity)
