@@ -35,11 +35,20 @@ section{
 	line-height: 36px;
 	/*border-radius: 6px;*/
 }
-section h3{
+section h2{
 	font-size: 18px;
 	color:#14877E;
 	line-height: 50px;
 	text-align:center;
+}
+section h3{
+	font-size: 16px;
+	color:#14877E;
+	line-height: 1.5em;
+}
+ul{
+	padding: 8px;
+	background-color: #f7e0a5;
 }
 
 /*blockquote{
@@ -52,7 +61,7 @@ section h3{
 
 footer{
 	background-image: url(../images/contact_03.jpg);
-	margin-top: 30px;
+	margin-top: 10px;
 }
 .footer-inner{
 	/*height: 90px;*/
