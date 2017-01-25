@@ -7,13 +7,13 @@ layout: linux
 
 文件操作也包括文件夹操作（ Linux 系统下万物皆文件）。主要涉及：
 
-- 文件创建：atom/touch
+- 文件创建：atom/touch fileName;
 
-- 文件夹创建： mkdir
+- 文件夹创建： mkdir folderName;
 
-- 文件夹删除：rm -r folder
+- 文件夹删除：rm -r folderName;
 
-- 文件移动： mv file ../
+- 文件移动： mv file ../()
 
 - 文件删除： rm file
 
@@ -21,19 +21,20 @@ layout: linux
 
 进入这个项目文件夹
 
+```
 cd project
+```
+
 这样，当前文件夹 就切换到了 project 之内。
 
-插播一个小技巧：可以用 pwd （ Print Working Directory 打印当前文件夹）来显示精确的位置。
+> 插播一个小技巧：可以用 pwd （ Print Working Directory 打印当前文件夹）来显示精确的位置。
 
-创建一个文件，可以用
-
-touch fileName
-注意：Windows 系统上，一般文件都是要有后缀，但是 Linux 下没有这个要求。
+> 注意：Windows 系统上，一般文件都是要有后缀，但是 Linux 下没有这个要求。
 
 但是，一般我们都是用 atom 编辑器来创建文件。
 
 atom .
+
 注：. 代表当前位置（当前文件夹）。
 
 删除文件或者文件夹
