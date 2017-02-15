@@ -1,6 +1,6 @@
 ---
 title: linux
-title: 上传代码到 Github.com
+layout: 上传代码到 Github.com
 ---
 
 ## 上传代码到 Github.com
