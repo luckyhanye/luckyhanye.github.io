@@ -64,6 +64,7 @@ pre{
 	margin:20px 0;
 	opacity:0.5;
 	color:#00a7cf;
+	line-height: 1.5em;
 }
 ul{
 	padding-left: 30px;
@@ -82,6 +83,7 @@ blockquote{
 	padding: 15px 30px;
 	margin-bottom: 20px;
 	opacity:0.6;
+	line-height: 1.5em;
 }
 
 footer{
