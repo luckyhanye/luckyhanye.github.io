@@ -193,11 +193,12 @@ $ ./node_modules/.bin/webpack-dev-server --progress --colors
 var path = require('path');
 
 module.exports = {
-  entry: path.resolve(__dirname, 'src/index.js'),
-  output: {
-      path: path.resolve(__dirname, 'build'),
-      filename: 'bundle.js',
-  },
+  entry(入口文件): './index.js'，
+  output(出口文件): {
+    path: 'build',（文件夹，名称随意，可写可不写）
+    filename: 'bundle.js'（出口文件名称）
+  }
+}
   devServer: {
     publicPath: "/static/",
     stats: { colors: true },
@@ -225,8 +226,235 @@ module.exports = {
 <script src="/static/bundle.js"></script>
 ```
 
-
 ok, npm run dev即可
+
+### devtool
+
+我们在配置中新增devtool字段，并设置值为source-map，这样我们就可以在浏览器中直接调试我们的源码，在控制台的sources下，点开可以看到webpack://目录，点开有惊喜哦。
+
+代码清单：webpack.config.js
+
+```
+devtool: 'cheap-module-source-map'
+```
+
+devtool可以有几个配置项：
+
+```
+  表格
+```
+
+### 多文件入口
+
+```
+$ cd src && touch entry1.js entry2.js
+```
+
+```
+/* webpack.config.js */
+var path = require('path');
+
+module.exports = {
+    entry: {
+      entry1: './src/entry1.js',
+      entry2: './src/entry2.js',
+    },
+    output: {
+        path: path.resolve(__dirname, 'build'),
+        filename: '[name].js'
+    },
+};
+```
+
+### resolve解析
+
+resolve下常用的是extension和alias字段的配置：
+
+- extension 不用在require或是import的时候加文件后缀
+
+  ```
+  /* webpack.config.js */
+  resolve: {
+    extensions: ["", ".js", ".jsx"],
+  },
+  ```
+
+```
+- var component = require('./component.js');
++ var component = require('./component');
+```
+
+- alias 配置别名，加快webpack构建的速度
+
+每当引入jquery模块的时候，它会直接引入jqueryPath,而不需要从node_modules文件夹中按模块的查找规则查找,不需要webpack去解析jquery.js文件
+
+先安装jQuery
+
+```
+npm install jquery --save
+```
+
+修改 webpack.config.js
+
+```
+resolve: {
+   extensions: ["",".js",".css",".json"],
++  alias: {
++    'jquery': jqueryPath
++  }
+},
+```
+
+### 使用Babel-loader来解析es6和jsx
+
+我们在src/index.js里面尝试写一个最基本的组件代码，暂时不用理会代码为什么要这么写，这里先把ES6语法和JSX语法加进来，用于跑通我们的开发环境，后续会有专题内容来详细讲述。
+
+代码清单：src/index.js
+
+```
+'use strict';
+
+import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
+
+class HelloWorld extends Component {
+  render(){
+    return (
+      <h1>Hello world</h1>
+    )
+  }
+}
+
+ReactDOM.render(<HelloWorld />, document.getElementById('app'));
+```
+
+ok，我们看到，我们的代码用到了基本的react.js和react-dom.js，而且使用的是ES6的语法来封装的组件和应用模块。
+
+所以接下来我们要做两件事：
+
+下载相应的模块：
+
+```
+$ npm install --save react react-dom
+```
+
+下载并配置babel，以解析ES6语法和JSX语法。
+
+babel是一款强大的解析器，拥有活跃而且完善的生态，不仅可以做JS相关的各种语法的解析，还提供丰富的插件功能。
+
+```
+$ npm install babel-loader babel-core --save-dev
+```
+
+安装后我们需要配置webapck.config.js文件
+
+代码清单：webpack.config.js
+
+```
+var path = require('path');
+
+module.exports = {
+    entry: path.resolve(__dirname, 'src/index.js'),
+    output: {
+        path: path.resolve(__dirname, 'build'),
+        filename: 'bundle.js',
+    },
+    module: {
+      loaders: [
+        {
+          test: /\.js$/,
+          loader: 'babel-loader'
+        }
+      ]
+    }
+};
+```
+
+这里指定了使用babel-loader来解析js文件，但是并没有告诉babel应该如何来解析，所以我们需要创建一个babelrc配置文件
+
+```
+$ touch .babelrc
+```
+
+然后编辑babelrc 代码清单：.babelrc
+
+```
+{
+  "presets": ["es2015", "react", "stage-0"],
+  "plugins": []
+}
+```
+
+为什么配置的是这两个参数，解释一下，配置的preset字段是在为babel解析做预设，告诉babel需要使用相关的预设插件来解析代码，plugins字段，顾名思义，就是用来配置使用babel相关的插件的，这里暂且不装。
+
+这里使用到了三个预设需要下载安装
+
+```
+$ npm install --save-dev babel-preset-es2015 babel-preset-react babel-preset-stage-0
+// 其中stage-0预设是用来说明解析ES7其中一个阶段语法提案的转码规则
+```
+
+好了，开始运行试一下吧
+
+```
+$ npm run dev
+```
+
+在浏览器中访问：http://localhost:3000/
+
+### 解析样式文件
+
+```
+style-loader css-loader less-loader
+```
+
+前面的大部分工作都在处理JS逻辑的解析和加载，但是我们还一直没有提我们的样式文件应该如何去处理。
+
+我们在课程中暂且约定使用less预处理器（saas的类似）来写我们项目的样式，那么首先需要下载几个webpack的loader
+
+```
+$ npm install --save-dev style-loader css-loader less-loader
+```
+
+进行webpack配置。 代码清单：webpack.config.js
+
+```
+loaders: [
+    {
+      test: /\.js$/,
+      loaders: ['react-hot', 'babel'],
+      exclude: path.resolve(__dirname, 'node_modules')
+    },
+    {
+      test: /\.css/,
+      loader: 'style!css'
+    },
+    {
+      test: /\.less/,
+      loader: 'style!css!less'
+    }
+]
+```
+
+### 图片加载
+
+```
+{
+  test: /\.(jpe?g|png)$/,
+  loader: 'file-loader'
+}
+```
+
+### 图标字体等资源
+
+图标字体的加载可以选择file-loader 或 url-loader 进行加载，配置如下（示例配置，大家在项目中最好还是按实际情况配置）
+
+```
+{
+  test: /\.(woff|woff2|ttf|svg|eot)(\?v=\d+\.\d+\.\d+)?$/,
+  loader: "url?limit=10000"
+}
+```
 
 
 nodejs 的模块分为 3 类，核心模块，第三方模块，以及自定义的模块
@@ -270,35 +498,4 @@ module.exports = {
     filename: 'bundle.js'
   }
 }
-```
-
-```
-  module.exprots={
-    entry(入口文件): './index.js'，
-    output(出口文件): {
-      path: 'build',（文件夹，名称随意，可写可不写）
-      filename: 'bundle.js'（出口文件名称）
-    }
-  }
-  ```
-
-  ```
-  {
-    "name": "hanye-demo",
-    "version": "1.0.0",
-    "description": "",
-    "main": "index.js",
-    "scripts": {
-      "test": "echo \"Error: no test specified\" && exit 1",
-      "build": "node -v",
-      // "pack": "./node_modules/.bin/webpack index1.js new.js -p --watch -d --progress --display-error-details ",
-      "push": "git add . && git commit -m'change' && git push"
-    },
-    "keywords": [],
-    "author": "",
-    "license": "ISC",
-    "devDependencies": {
-      "webpack": "^2.2.1"
-    }
-  }
 ```
