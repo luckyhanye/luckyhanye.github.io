@@ -291,7 +291,7 @@ module.exports = {
     "scripts": {
       "test": "echo \"Error: no test specified\" && exit 1",
       "build": "node -v",
-      "pack": "./node_modules/.bin/webpack index1.js new.js -p --watch -d --progress --display-error-details ",
+      // "pack": "./node_modules/.bin/webpack index1.js new.js -p --watch -d --progress --display-error-details ",
       "push": "git add . && git commit -m'change' && git push"
     },
     "keywords": [],
