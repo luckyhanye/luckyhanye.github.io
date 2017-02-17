@@ -242,16 +242,9 @@ devtool: 'cheap-module-source-map'
 devtool可以有几个配置项：
 
 ```
-| devtool | build | speed | rebuild | speed | production | supported | quality |
-| :-------| :---- | :---- | :------ | :---- | :--------- | :-------- | :------ |
-| eval	  | +++	  | +++	  | no      |	      |            | generated | code    |
-| :-------| :---- | :---- | :------ | :---- | :--------- | :-------- | :------ |
-cheap-eval-source-map	+	++	no	transformed code (lines only)
-cheap-source-map	+	o	yes	transformed code (lines only)
-cheap-module-eval-source-map	o	++	no	original source (lines only)
-cheap-module-source-map	o	-	yes	original source (lines only)
-eval-source-map	–	+	no	original source
-source-map	–	–	yes	original source
+devtool          | build <br> speed | rebuild <br> speed | production <br> supported | quality
+-----------------|------------------|--------------------|---------------------------|--------
+
 ```
 
 ### 多文件入口
