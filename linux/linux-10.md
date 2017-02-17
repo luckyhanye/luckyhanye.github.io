@@ -23,7 +23,6 @@ $ npm init（初始化 node 项目，生成 package.json 文件）
 编辑.gitignore
 
 > “.gitignore”文件的作用：
-
     本地仓库中有不想上传到网上的，把文件名放到 ".gitignore"文件中，就可以忽略不上传到网站上；
 
 
