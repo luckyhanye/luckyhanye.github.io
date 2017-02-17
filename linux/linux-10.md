@@ -13,16 +13,17 @@ webpack是一款强大的模块加载器兼打包工具，它能把各种资源�
 
 创建一个项目
 
-
 ```
-$ mkdir webpack-demos && cd webpack-demos
-$ git init
-$ touch README.md .gitignore
-$ npm init
+$ mkdir webpack-demos && cd webpack-demos (创建一个文件夹，跳转到此文件夹)
+$ git init （初始化仓库）
+$ touch README.md .gitignore （新建文件）
+$ npm init（初始化 node 项目，生成 package.json 文件）
 ```
-
 
 编辑.gitignore
+
+> “.gitignore”文件的作用：
+
 
 
 ```
@@ -241,14 +242,10 @@ devtool: 'cheap-module-source-map'
 devtool可以有几个配置项：
 
 ```
-| Header One     | Header Two     |
-| :------------- | :------------- |
-| Item One       | Item Two       |
-
-
-| devtool    | build      | speed      | rebuild    | speed      | production | supported  | quality    |
-| :---       | :---       | :---       | :---       | :---       | :---       | :---       | :---       |
-eval	+++	+++	no	generated code
+| devtool | build | speed | rebuild | speed | production | supported | quality |
+| :-------| :---- | :---- | :------ | :---- | :--------- | :-------- | :------ |
+| eval	  | +++	  | +++	  | no      |	      |            | generated | code    |
+| :-------| :---- | :---- | :------ | :---- | :--------- | :-------- | :------ |
 cheap-eval-source-map	+	++	no	transformed code (lines only)
 cheap-source-map	+	o	yes	transformed code (lines only)
 cheap-module-eval-source-map	o	++	no	original source (lines only)
