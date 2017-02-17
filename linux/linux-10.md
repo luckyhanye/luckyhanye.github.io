@@ -241,7 +241,20 @@ devtool: 'cheap-module-source-map'
 devtool可以有几个配置项：
 
 ```
-  表格
+| Header One     | Header Two     |
+| :------------- | :------------- |
+| Item One       | Item Two       |
+
+
+| devtool    | build      | speed      | rebuild    | speed      | production | supported  | quality    |
+| :---       | :---       | :---       | :---       | :---       | :---       | :---       | :---       |
+eval	+++	+++	no	generated code
+cheap-eval-source-map	+	++	no	transformed code (lines only)
+cheap-source-map	+	o	yes	transformed code (lines only)
+cheap-module-eval-source-map	o	++	no	original source (lines only)
+cheap-module-source-map	o	-	yes	original source (lines only)
+eval-source-map	–	+	no	original source
+source-map	–	–	yes	original source
 ```
 
 ### 多文件入口
@@ -307,7 +320,51 @@ resolve: {
 
 ### 使用Babel-loader来解析es6和jsx
 
-我们在src/index.js里面尝试写一个最基本的组件代码，暂时不用理会代码为什么要这么写，这里先把ES6语法和JSX语法加进来，用于跑通我们的开发环境，后续会有专题内容来详细讲述。
+我们在 src/index.js 里面尝试写一个最基本的组件代码，暂时不用理会代码为什么要这么写，这里先把ES6语法和JSX语法加进来，用于跑通我们的开发环境，后续会有专题内容来详细讲述。
+
+首先要安装工具包，步骤如下：
+
+- 打开 [babel](https://babeljs.io/) 官网；
+
+- 找到docs——Setup，选择webpack,在命令行中输入如下代码：
+
+  ```
+  npm install --save-dev babel-loader babel-core
+  ```
+  即可安装；
+
+- 在 "webpack.config.js" 中粘贴如下代码：
+
+  ```
+  module: {
+  loaders: [
+    { test: /\.js$/, exclude: /node_modules/, loader: "babel-loader" }
+  ]
+}
+  ```
+  把 上面的 “loaders” 改为 “rules”, 下面的 "loaders" 改为 “use”; 如下所示：
+
+  ```
+  module.exports={
+  entry:'./src/newindex.js',
+  output:{
+    path:'build',
+    filename:'bundle.js'
+  },
+  devtool: 'eval',
+  module: {
+    rules: [
+      { test: /\.js$/, exclude: /node_modules/, use: "babel-loader" }
+    ]
+  }
+};
+```
+
+- 新建文件 ".babelrc",
+
+
+
+
 
 代码清单：src/index.js
 
