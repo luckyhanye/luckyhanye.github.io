@@ -20,6 +20,14 @@ $ touch README.md .gitignore （新建文件）
 $ npm init（初始化 node 项目，生成 package.json 文件）
 ```
 
+安装`webpack`,安装方法：
+
+```
+npm install webpack -D
+```
+
+新建文件`webpack.config.js`
+
 编辑.gitignore
 
 > “.gitignore”文件的作用：
@@ -28,30 +36,49 @@ $ npm init（初始化 node 项目，生成 package.json 文件）
 
 ```
 node_modules
-*.log*
+*.log*    // * 匹配任何东西，无论`.log`的前面或后面有任何东西，都能匹配
 .idea
 ```
 
-
-建立src和build两个目录
-
+建立src目录
 
 ```
-// src 目录存放源码，build 目录存放编译打包之后的资源
-$ mkdir src build
+src 目录存放源码，build 目录存放编译打包之后的资源
+$ mkdir src
 $ cd src && touch index.js component.js
 $ cd ../ && touch index.html
 ```
 
 ```
-/* src/index.js */
-var component = require('./component.js');
+/* src/index.js */     //入口文件
+var component = require('./component.js');    //引入js
 
 component();
 /* src/component.js */
-module.exports = function(){
+module.exports = function(){    //导出js
   alert('component');
 }
+```
+
+生成`build`文件夹（名称可以改），打包成`bundle.js`文件,打开`webpack.config.js`文件进行设置，如下：
+
+```
+module.exports={
+  entry:'./src/newindex.js',    //入口文件路径
+  output:{    //出口文件
+    path:'build',    //打包到问件夹，文件夹名自定
+    filename:'bundle.js'   //打包文件，文件名自定
+  },
+  devtool: 'eval',
+  module: {
+    rules: [
+      { test: /\.js$/, exclude: /node_modules/, use: "babel-loader" }
+    ]
+  }
+};
+```
+
+```
 /*index.html */
 <!DOCTYPE html>
 <html lang="en">
