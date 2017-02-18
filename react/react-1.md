@@ -18,17 +18,17 @@ JSX(JaveScript XML的缩写) 语法，允许我们在JS里直接去写标签。
 
 特点：
 
-- 1. 每个标签必须有结束标签，如  <img src="" alt=""/>、<br/>自关闭  <h1></h1>
+- 每个标签必须有结束标签，如  <img src="" alt=""/>、<br/>自关闭  <h1></h1>
 
-- 2. JSX 元素必须包裹在一个闭合的标签内， 如 <div> <h1> </h1> <br/> </div>
+- JSX 元素必须包裹在一个闭合的标签内， 如 <div> <h1> </h1> <br/> </div>
 
-- 3. JSX  注释的写法 {/* 我是注释  \*/}
+- JSX  注释的写法 {/* 我是注释  \*/}
 
-- 4. 可以在JSX元素内嵌入变量  {obj}
+- 可以在JSX元素内嵌入变量  {obj}
 
-- 5. class 要写成 className , tabindex 写成 tabIndex , for 写成 htmlFor
+- class 要写成 className , tabindex 写成 tabIndex , for 写成 htmlFor
 
-- 6. JSX 语法会被编译，通过React.createElement()这个方法
+- JSX 语法会被编译，通过React.createElement()这个方法
 
 语法参考代码：
 
@@ -90,7 +90,7 @@ ReactDOM.render(  //`render`是`ReactDOM`中的方法，就是把某个`DOM`节�
 
 组件（component）首字母大写,自定义标签，可以包含一系列标签，三种写法：
 
-- 1. var Hello=React.createClass({})  es5的写法，一般不用
+- var Hello=React.createClass({})  es5的写法，一般不用
 
   参考代码：
 
@@ -107,7 +107,7 @@ ReactDOM.render(  //`render`是`ReactDOM`中的方法，就是把某个`DOM`节�
 
   ```
 
-- 2.function Dom(){return <h3>111111<h3/>}   使用时<Dom/>(<Dom></Dom>)
+- function Dom(){return <h3>111111<h3/>}   使用时<Dom/>(<Dom></Dom>)
 
   参考代码：
 
@@ -125,7 +125,7 @@ ReactDOM.render(  //`render`是`ReactDOM`中的方法，就是把某个`DOM`节�
   )
   ```
 
-- 3.
+- 
 
 
 
