@@ -20,19 +20,62 @@ $ touch README.md .gitignore （新建文件）
 $ npm init（初始化 node 项目，生成 package.json 文件）
 ```
 
-安装`webpack`,安装方法：
+安装`webpack`和`webpack-dev-server`,安装方法：
 
 ```
-npm install webpack -D
+# 安装并保存在项目的依赖中
+$ npm install --save-dev webpack webpack-dev-server
+# 如果想直接在命令行使用webpack或webpack-dev-server命令，请全局安装
+$ npm install -g webpack webpack-dev-server
 ```
 
-新建文件`webpack.config.js`
+创建webpack的配置文件
+
+```
+$ touch webpack.config.js
+```
+
+>请注意webpack.config.js这个文件命名，默认情况下需要严格按照这个命名，不然会报Output filename not configured的错误；另外，如果不按这个命名，那么在webpack运行的时候通过--conf这个参数指定配置文件，比如：webpack --config conf.js
+
+进行基本配置
+
+```
+var path = require('path');   
+
+module.exports = {
+    entry: path.resolve(__dirname, 'src/index.js'),
+    output: {
+        path: path.resolve(__dirname, 'build'),
+        filename: 'bundle.js'
+    },
+};
+```
+
+执行webpack命令,这里我们用的是项目内安装的webpack
+
+
+```
+$ ./node_modules/.bin/webpack
+```
+
+可以看到控制台出现如下信息：
+
+
+```
+Hash: cf7cc9272c664f542fcb
+Version: webpack 1.13.0
+Time: 80ms
+    Asset     Size  Chunks             Chunk Names
+bundle.js  2.04 kB       0  [emitted]  main
+   [0] ./src/index.js 60 bytes {0} [built]
+   [1] ./src/component.js 57 bytes {0} [built]
+```
+
 
 编辑.gitignore
 
 > “.gitignore”文件的作用：
     本地仓库中有不想上传到网上的，把文件名放到 ".gitignore"文件中，就可以忽略不上传到网站上；
-
 
 ```
 node_modules
@@ -88,71 +131,11 @@ module.exports={
 </head>
 <body>
   <div id="app"></div>
-  <script src="./build/bundle.js"></script>
+  <script src="./build/bundle.js"></script>  // html 文件中 script 引入 ‘bundle.js’ 文件
 </body>
 </html>
 ```
 
-
-下载webpack和webpack-dev-server
-
-
-```
-# 安装并保存在项目的依赖中
-$ npm install --save-dev webpack webpack-dev-server
-# 如果想直接在命令行使用webpack或webpack-dev-server命令，请全局安装
-$ npm install -g webpack webpack-dev-server
-```
-
-
-创建webpack的配置文件
-
-
-```
-$ touch webpack.config.js
-```
-
->请注意webpack.config.js这个文件命名，默认情况下需要严格按照这个命名，不然会报Output filename not configured的错误；另外，如果不按这个命名，那么在webpack运行的时候通过--conf这个参数指定配置文件，比如：webpack --config conf.js
-
-
-进行基本配置
-
-
-```
-var path = require('path');
-
-module.exports = {
-    entry: path.resolve(__dirname, 'src/index.js'),
-    output: {
-        path: path.resolve(__dirname, 'build'),
-        filename: 'bundle.js'
-    },
-};
-```
-
-
-执行webpack命令,这里我们用的是项目内安装的webpack
-
-
-```
-$ ./node_modules/.bin/webpack
-```
-
-可以看到控制台出现如下信息：
-
-
-```
-Hash: cf7cc9272c664f542fcb
-Version: webpack 1.13.0
-Time: 80ms
-    Asset     Size  Chunks             Chunk Names
-bundle.js  2.04 kB       0  [emitted]  main
-   [0] ./src/index.js 60 bytes {0} [built]
-   [1] ./src/component.js 57 bytes {0} [built]
-```
-
-
-build目录下也新增了一个bundle.js文件
 
 ### webpack和webpack-dev-server的基本命令
 
@@ -162,21 +145,21 @@ $ webpack --help
 
 执行以上命令，可以在控制台看到很多webpack相关的命令，选取几个常用的介绍下。
 
-- webpack 开发环境下编译
+- `webpack` 开发环境下编译
 
-- webpack -p 产品编译及压缩
+- `webpack -p` 产品编译及压缩
 
-- webpack --watch 开发环境下持续的监听文件变动来进行编译(非常快!)
+- `webpack --watch` 开发环境下持续的监听文件变动来进行编译(非常快!)
 
-- webpack -d 引入 source maps
+- `webpack -d` 引入 source maps
 
-- webpack --progress 显示构建进度
+- `webpack --progress` 显示构建进度
 
-- webpack --display-error-details 这个很有用，显示打包过程中的出错信息
+- `webpack --display-error-details` 这个很有用，显示打包过程中的出错信息
 
-- webpack --profile 输出性能数据，可以看到每一步的耗时
+- `webpack --profile` 输出性能数据，可以看到每一步的耗时
 
-另外，让我们使用webpack-dev-server来起一个本地服务进行调试,这里任然用的是项目内部的webpack-dev-server
+另外，让我们使用 `webpack-dev-server` 来起一个本地服务进行调试,这里任然用的是项目内部的 `webpack-dev-server`
 
 ```
 $ ./node_modules/.bin/webpack-dev-server --progress --colors
@@ -188,9 +171,9 @@ $ ./node_modules/.bin/webpack-dev-server --progress --colors
 <script type="text/javascript" src="/bundle.js"></script>
 ```
 
-打开localhost:8080，回车即可。
+打开 `localhost:8080`，回车即可。
 
-那么执行webpack-dev-server后面的几个参数是什么意思呢？
+那么执行 `webpack-dev-server` 后面的几个参数是什么意思呢？
 
 
 - webpack-dev-server - 在 localhost:8080 建立一个 Web 服务器
