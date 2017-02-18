@@ -87,8 +87,10 @@ blockquote{
 }
 
 span{
-	color:green;
-	background-color: #ccc;
+	color:#1256f0;
+	background-color: #f5da91;
+	opacity:0.5;
+	border-radius: 3px;
 	line-height: 1.5em;
 	font-style: italic;
 }
