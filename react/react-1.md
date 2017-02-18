@@ -18,17 +18,25 @@ JSX(JaveScript XML的缩写) 语法，允许我们在JS里直接去写标签。
 
 特点：
 
-- 每个标签必须有结束标签，如`<img src="" alt=""/>`、`<br/>`自关闭  `<h1></h1>`
+- 每个标签必须有结束标签，
 
-- JSX 元素必须包裹在一个闭合的标签内， 如 <div> <h1> </h1> <br/> </div>
+  ```
+  如`<img src="" alt=""/>`、`<br/>`自关闭  `<h1></h1>`
+  ```
+
+- JSX 元素必须包裹在一个闭合的标签内，
+
+```
+如 <div> <h1> </h1> <br/> </div>
+```
 
 - JSX  注释的写法 {/* 我是注释  \*/}
 
-- 可以在JSX元素内嵌入变量  {obj}
+- 可以在JSX元素内嵌入变量  `{obj}`
 
-- class 要写成 className , tabindex 写成 tabIndex , for 写成 htmlFor
+- `class` 要写成 `className` , `tabindex` 写成 `tabIndex` , `for` 写成 `htmlFor`
 
-- JSX 语法会被编译，通过React.createElement()这个方法
+- JSX 语法会被编译，通过`React.createElement(  )`这个方法
 
 语法参考代码：
 
