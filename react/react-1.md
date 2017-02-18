@@ -18,7 +18,7 @@ JSX(JaveScript XML的缩写) 语法，允许我们在JS里直接去写标签。
 
 特点：
 
-- 每个标签必须有结束标签，如  <img src="" alt=""/>、<br/>自关闭  <h1></h1>
+- 每个标签必须有结束标签，如`<img src="" alt=""/>`、`<br/>`自关闭  `<h1></h1>`
 
 - JSX 元素必须包裹在一个闭合的标签内， 如 <div> <h1> </h1> <br/> </div>
 
@@ -125,7 +125,7 @@ ReactDOM.render(  //`render`是`ReactDOM`中的方法，就是把某个`DOM`节�
   )
   ```
 
-- 
+-
 
 
 
