@@ -71,7 +71,7 @@ ul{
 
 }
 ul li{
-	line-height: 25px;	
+	line-height: 25px;
 }
 section p a{
 	text-decoration:none;
@@ -86,7 +86,7 @@ blockquote{
 	line-height: 1.5em;
 }
 
-span{
+section span{
 	color:#1256f0;
 	background-color: #f5da91;
 	opacity:0.5;
@@ -94,6 +94,7 @@ span{
 	line-height: 1.5em;
 	font-style: italic;
 }
+
 footer{
 	background-image: url(../images/contact_03.jpg);
 	margin-top: 10px;
