@@ -35,7 +35,7 @@ section p{
 	color:#64686a;
 	font-family: "微软雅黑","黑体";
 	font-size: 15px;
-	line-height: 36px;
+	line-height: 2em;
 }
 section h2{
 	font-family: "宋体";
@@ -86,6 +86,12 @@ blockquote{
 	line-height: 1.5em;
 }
 
+span{
+	color:green;
+	background-color: #ccc;
+	line-height: 1.5em;
+	font-style: italic;
+}
 footer{
 	background-image: url(../images/contact_03.jpg);
 	margin-top: 10px;
