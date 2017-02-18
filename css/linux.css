@@ -87,10 +87,13 @@ blockquote{
 }
 
 p code{
+	padding-left:5px;
+	padding-right: 5px;
 	color:#1256f0;
 	background-color: #f5da91;
 	opacity:0.5;
 	border-radius: 3px;
+	font-size: 14px;
 	line-height: 1.5em;
 	font-style: italic;
 }

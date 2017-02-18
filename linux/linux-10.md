@@ -103,7 +103,7 @@ module.exports = function(){    //导出js
 }
 ```
 
-生成`build`文件夹（名称可以改），打包成`bundle.js`文件,打开`webpack.config.js`文件进行设置，如下：
+生成` build `文件夹（名称可以改），打包成` bundle.js `文件,打开` webpack.config.js `文件进行设置，如下：
 
 ```
 module.exports={
@@ -145,19 +145,19 @@ $ webpack --help
 
 执行以上命令，可以在控制台看到很多webpack相关的命令，选取几个常用的介绍下。
 
-- `webpack` 开发环境下编译
+- ` webpack ` 开发环境下编译
 
-- `webpack -p` 产品编译及压缩
+- ` webpack -p ` 产品编译及压缩
 
-- `webpack --watch` 开发环境下持续的监听文件变动来进行编译(非常快!)
+- ` webpack --watch ` 开发环境下持续的监听文件变动来进行编译(非常快!)
 
-- `webpack -d` 引入 source maps
+- ` webpack -d ` 引入 source maps
 
-- `webpack --progress` 显示构建进度
+- ` webpack --progress ` 显示构建进度
 
-- `webpack --display-error-details` 这个很有用，显示打包过程中的出错信息
+- ` webpack --display-error-details ` 这个很有用，显示打包过程中的出错信息
 
-- `webpack --profile` 输出性能数据，可以看到每一步的耗时
+- ` webpack --profile ` 输出性能数据，可以看到每一步的耗时
 
 另外，让我们使用 `webpack-dev-server` 来起一个本地服务进行调试,这里任然用的是项目内部的 `webpack-dev-server`
 
@@ -184,19 +184,19 @@ $ ./node_modules/.bin/webpack-dev-server --progress --colors
 
 - webpack-dev-server --colors - 命令行中显示颜色
 
-- webpack-dev-server --content-base build - webpack-dev-server服务会默认以当前目录伺服文件，如果设置了content-base的话，服务的根路径则为build目录
+- webpack-dev-server --content-base build - webpack-dev-server 服务会默认以当前目录伺服文件，如果设置了`content-base`的话，服务的根路径则为`build`目录
 
-- webpack-dev-server --inline 可以自动加上dev-server的管理代码，实现热更新
+- webpack-dev-server --inline 可以自动加上`dev-server`的管理代码，实现热更新
 
-- webpack-dev-server --hot 开启代码热替换，可以加上HotModuleReplacementPlugin
+- webpack-dev-server --hot 开启代码热替换，可以加上`HotModuleReplacementPlugin`
 
 - webpack-dev-server --port 3000 设置服务端口
 
-关于webpack-dev-server的简单介绍：webpack-dev-server是一个小型的node.js Express服务器,它使用webpack-dev-middleware中间件来为通过webpack打包生成的资源文件提供Web服务。它还有一个通过Socket.IO连接着webpack-dev-server服务器的小型运行时程序。webpack-dev-server发送关于编译状态的消息到客户端，客户端根据消息作出响应。
+关于`webpack-dev-server`的简单介绍：`webpack-dev-server`是一个小型的`node.js Express`服务器,它使用`webpack-dev-middleware`中间件来为通过`webpack`打包生成的资源文件提供Web服务。它还有一个通过`Socket.IO`连接着`webpack-dev-server`服务器的小型运行时程序。webpack-dev-server发送关于编译状态的消息到客户端，客户端根据消息作出响应。
 
 ### devServer
 
-刚才我们看到，在运行webpack-dev-server的时候，后面带了一串参数，这里我们可以使用devServer字段统一在webpack.config.js文件里面维护。
+刚才我们看到，在运行w`ebpack-dev-server`的时候，后面带了一串参数，这里我们可以使用`devServer`字段统一在`webpack.config.js`文件里面维护。
 
 
 ```
@@ -220,7 +220,7 @@ module.exports = {
 ```
 
 
-同时，我们可以简化scripts字段的配置了
+同时，我们可以简化`scripts`字段的配置了
 
 
 ```
@@ -230,7 +230,7 @@ module.exports = {
 ```
 
 
-对应的修改index.html文件中的资源引用地址
+对应的修改`index.html`文件中的资源引用地址
 
 
 ```
