@@ -299,14 +299,76 @@ export default Signin;
 $ $ npm install --save-dev style-loader css-loader less-loader
 ```
 
+进行webpack配置。 代码清单：`webpack.config.js`
 
+```
+module.exports={
+  entry:'./src/index.js',
+  output:{
+    path:'build',
+    filename:'bundle.js',
+  },
+  devtool: 'eval',
+  resolve: {
+    extensions: ['.js','.jsx','.css','.jpg','png']    //可以省略引用文件的后缀名
+  },
+  module: {
+    rules: [
+      { test: /\.js$/, exclude: /node_modules/, use: "babel-loader" },
+      { test: /\.css$/, use: ['style-loader','css-loader']}  //css 文件引用的配置
+    ]
+  }
+};
+```
 
+引入代码：
 
+```
+import "./main.css"
+```
 
+### 加载图片
 
+进行webpack配置。 代码清单：`webpack.config.js`
 
+```
+module.exports={
+  entry:'./src/index.js',
+  output:{
+    path:'build',
+    filename:'bundle.js',
+    publicPath:'build/'    // 设置公共文件夹，图片打包路径
+  },
+  devtool: 'eval',
+  resolve: {
+    extensions: ['.js','.jsx','.css','.jpg','png']    //可以省略引用文件的后缀名
+  },
+  module: {
+    rules: [
+      { test: /\.js$/, exclude: /node_modules/, use: "babel-loader" },
+      { test: /\.css$/, use: ['style-loader','css-loader']}，  //css 文件引用的配置
+      { test: /\.(jpe?g|png)$/, use: 'file-loader'}  //加载图片的配置
+    ]
+  }
+};
+```
 
+加载图片代码写法：
 
+```
+import url from '../link/111.jpg';   //引入图片原路径，同时会打包到build里面
+
+class Logo extends React.Component{
+  render(){
+    let styles={width:'50px',height:"50px",border:"2px solid red",float:"left",borderRadius:"50%"}
+    return(
+      <div>
+        <img src={url} alt="" style={styles}/>   //  调用"url"
+      </div>
+    )
+  }
+}
+```
 
 ### `react` 组件的状态  `state`
 
