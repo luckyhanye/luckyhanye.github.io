@@ -133,26 +133,26 @@ ReactDOM.render(  //`render`是`ReactDOM`中的方法，就是把某个`DOM`节�
 
 - class
 
-参考代码：
+  参考代码：
 
-```
-import React from 'react';
-import ReactDOM from 'react-dom';
+  ```
+  import React from 'react';
+  import ReactDOM from 'react-dom';
 
-class Banner extends React.Component{ 
-  render(){
-    return(
-      <div>
-        我是Banner
-      </div>
-    )
+  class Banner extends React.Component{
+    render(){
+      return(
+        <div>
+          我是Banner
+        </div>
+      )
+    }
   }
-}
 
-ReactDOM.render(
-  <Banner/>,document.getElementById('app1')   
-)
-```
+  ReactDOM.render(
+    <Banner/>,document.getElementById('app1')   
+  )
+  ```
 
 
 
