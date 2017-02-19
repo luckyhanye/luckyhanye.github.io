@@ -296,7 +296,7 @@ export default Signin;
 首先需要下载几个webpack的loader,
 
 ```
-$ $ npm install --save-dev style-loader css-loader less-loader
+$ npm install --save-dev style-loader css-loader less-loader
 ```
 
 进行webpack配置。 代码清单：`webpack.config.js`
