@@ -95,6 +95,9 @@ ReactDOM.render(  //`render`是`ReactDOM`中的方法，就是把某个`DOM`节�
   参考代码：
 
   ```
+  import React from 'react';  //引入react
+  import ReactDOM from 'react-dom';  //引入react-dom
+
   let Dom=React.createClass({      //使用的是`React`中的`createClass` 方法
     render:function() {
       return (<h3>111111</h3>)
@@ -112,7 +115,10 @@ ReactDOM.render(  //`render`是`ReactDOM`中的方法，就是把某个`DOM`节�
   参考代码：
 
   ```
-  function Dom(){
+  import React from 'react';
+  import ReactDOM from 'react-dom';
+
+  function Dom(){      //创建函数
     return (
         <h3>222222</h3>
         <h3>ojoiejfkaj</h3>
@@ -125,7 +131,28 @@ ReactDOM.render(  //`render`是`ReactDOM`中的方法，就是把某个`DOM`节�
   )
   ```
 
--
+- class
+
+参考代码：
+
+```
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+class Banner extends React.Component{ 
+  render(){
+    return(
+      <div>
+        我是Banner
+      </div>
+    )
+  }
+}
+
+ReactDOM.render(
+  <Banner/>,document.getElementById('app1')   
+)
+```
 
 
 
