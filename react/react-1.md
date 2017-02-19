@@ -86,7 +86,7 @@ ReactDOM.render(  //`render`是`ReactDOM`中的方法，就是把某个`DOM`节�
 )
 ```
 
-### 组件
+### 组件的写法
 
 组件（component）首字母大写,自定义标签，可以包含一系列标签，三种写法：
 
@@ -153,6 +153,210 @@ ReactDOM.render(  //`render`是`ReactDOM`中的方法，就是把某个`DOM`节�
     <Banner/>,document.getElementById('app1')   
   )
   ```
+
+### `react` 组件的嵌套
+
+一个完整的网页，都是由多个组件集合而成，文件当中可以嵌套一个或多个组件，也可以多个文件嵌套
+
+参考代码：
+
+1、第一重文件导出
+
+```
+// sigin.js  文件
+
+import React from 'react';
+
+class Signin extends React.Component{  //创建类，“Signin”
+  render(){
+    return (
+      <div>
+         <input type="button" value="aaa"/>
+         <input type="button" value="bbb"/>
+      </div>
+    )
+  }
+}
+
+export default Signin   //默认导出“Signin”
+
+// logo.js  文件
+
+import React from "react";
+
+class Logo extends React.Component{    //创建类，“Logo”
+  render(){
+    return (
+      <div className="logo">
+        Project name
+      </div>
+    )
+  }
+}
+
+export default Logo   //默认导出“Logo”
+
+```
+
+2、第一重文件引入/第二重文件导出
+
+```
+import React from 'react';
+
+import Logo from './logo.js'       //第一重文件引入
+import Signin from './signin.js'   //第一重文件引入
+
+class Header extends React.Component{   //创建类，'Header'
+  render(){
+    return(
+      <div>
+        <Logo/>
+        <Signin/>
+      </div>
+    )
+  }
+}
+
+export default Header;     // 第二重文件导出  默认导出“Header”   (将之前导入的也一并打包导出)
+```
+
+3、第三重文件引入
+
+```
+import React from 'react';
+
+import Header from './header'    
+
+class App extends React.Component{
+  render(){
+    return (
+      <div>
+        <Header/>    //可以实现“header.js”文件中引入的功能
+      </div>
+    )
+  }
+}
+
+export default App;  //默认导出
+
+```
+4、入口文件 "index.js"
+
+```
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+
+import App from './app'
+
+ReactDOM.render(
+  <App/>,document.getElementById('app')
+ )
+```
+
+### react 中行内样式的写法
+
+参考代码：
+
+```
+import React from 'react';
+
+class Signin extends React.Component{
+  getStyles(){   //行内样式的写法，写成函数方法的形式，返回一个对象，对象里面写属性样式
+    return {
+      float:"left",
+      marginLeft:"150px",
+      marginTop:"5px",
+    }
+  }
+  render(){   //使用样式，在标签内写成 style={this.getStyles()}   实质就是调用方法
+    let color=1;
+    let styles={   //定义对象
+      leftBtn:{    //对象的方法
+        background:color ? "red" : "yellow"   //js语句
+      },
+      rightBtn:{   //对象的方法
+        background:"blue"
+      }
+    }
+    return(
+      <div style={this.getStyles()}>   {/* 调用“Signin”的方法*/}
+        <button style={styles.leftBtn}>登录</button>   {/* 调用对象的方法 */}
+        <button style={styles.rightBtn}>注册</button>   {/* 调用对象的方法 */}
+      </div>
+    )
+  }
+}
+
+export default Signin;
+```
+
+### 引入`css`的样式
+
+首先需要下载几个webpack的loader,
+
+```
+$ $ npm install --save-dev style-loader css-loader less-loader
+```
+
+
+
+
+
+
+
+
+
+
+### `react` 组件的状态  `state`
+
+react 组件状态 state，控制组件内部状态，组件内部状态变化，界面也会随之变化更新
+
+
+```
+import React from 'react';
+
+class App extends React.Component{   //创建类 App
+  constructor(){  //定义属性，自行运行
+    super();      //继承
+    this.state={   //定义state（状态）
+      num:0,
+      show:false
+    }
+  }
+  handleClick(){   //创建一个方法（函数），没有"this"指向
+    // console.log(this);   //通过 bind 的方法可以获取 this 指向，.bind(this)
+    this.setState({num:this.state.num+1})     //修改state  用setState方法
+  }
+  handleCut(){
+    this.setState({num:this.state.num-1})
+  }
+  handleShow(){
+    this.setState({show:!this.state.show})
+  }
+
+  render(){     //render方法
+    return (
+      <div>
+        数字是：{this.state.num} <br/>
+        <button onClick={this.handleClick.bind(this)}>+1</button>
+
+        <button onClick={this.handleCut.bind(this)}>-1</button>
+
+        <button onClick={this.handleShow.bind(this)}>{this.state.show?'隐藏':'显示'}</button>
+
+        <p>你现在显示吗？{this.state.show?'显示':"不显示"}</p>
+
+        <p style={{display:this.state.show?'block':"none"}}>你现在显示吗？</p>
+      </div>
+    )
+  }
+}
+
+// {this.state……   }  可以用在多处
+```
+
+
 
 
 
