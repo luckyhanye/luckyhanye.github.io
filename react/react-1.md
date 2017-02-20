@@ -454,7 +454,9 @@ class App extends React.Component{   //创建类 App
       return (
         <div>
           <p>去哪玩？{this.state.text}</p>
-          <button onClick={this.changeClick.bind(this)}>{this.state.start?"停止":"开始"}</button>   //判断按钮的状态
+          <button onClick={this.changeClick.bind(this)}>  //判断按钮的状态
+            {this.state.start?"停止":"开始"}
+          </button>   
         </div>
       )
     }
@@ -491,9 +493,15 @@ class App extends React.Component{   //创建类 App
     render(){
       return (
         <div>
-          <button style={this.style()} onClick={this.handleClick.bind(this,0)}>选项卡一</button>
-          <button style={this.style()} onClick={this.handleClick.bind(this,1)}>选项卡二</button>
-          <button style={this.style()} onClick={this.handleClick.bind(this,2)}>选项卡三</button>
+          <button style={this.style()} onClick={this.handleClick.bind(this,0)}>
+            选项卡一
+          </button>
+          <button style={this.style()} onClick={this.handleClick.bind(this,1)}>
+            选项卡二
+          </button>
+          <button style={this.style()} onClick={this.handleClick.bind(this,2)}>
+            选项卡三
+          </button>
           <div>
             {
               this.state.show ===0? <p>这是选项卡一</p>:
