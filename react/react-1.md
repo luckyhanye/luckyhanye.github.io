@@ -518,6 +518,66 @@ class App extends React.Component{   //创建类 App
 
   ```
 
+### `react`的`props`属性
+
+前端开发中，通常把通用的设计元素（按钮，表单框，布局组件等）拆成可复用的组件。这样，下次开发相同界面程序时就可以写更少的代码，也意义着更高的开发效率，更少的 Bug 和更少的程序体积。
+
+可以通过`react`中的`props`来传递这些通用的，可复用的组件。
+
+下面代码展示了，如何通过`props`来传递组件的
+
+```
+//通用组件
+
+import React from "react"
+
+class Card extends React.Component{
+  render(){
+    let card={
+      width:"100%",
+      maxWidth:"760px",
+      height:"80px",
+      margin:"10px auto",
+      boxShadow:"1px 2px 6px gray"
+    }
+    let cardIndex={
+      float:"left",
+      width:"80px",
+      height:"80px",
+      backgroundColor:"teal",
+      color:"white",
+      lineHeight:"80px",
+      textAlign:"center",
+      fontSize:"25px"
+    }
+    let cardInfo={
+      float:"left",
+      height:"80px",
+      padding:"0 0 0 30px"
+    }
+    console.log(this.props);
+    return (
+      <div style={card}>
+        <div style={cardIndex}>{this.props.index}</div>   
+        <div style={cardInfo}>
+          <h3>{this.props.title}</h3>
+          <p>{this.props.date}</p>
+        </div>
+      </div>
+    )
+  }
+}
+Card.defaultProps={    //默认属性设置
+  index:"NO.",
+  title:"默认标题",
+  date:"---- -- --"
+}
+
+export default Card
+```
+
+
+
 
 
 
