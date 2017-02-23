@@ -633,16 +633,23 @@ class App extends React.Component{
   render(){
     return (
       <div>
-        {/* {
-          this.state.date.map(item=><Card key={Math.random()} title={item.title} index={item.index} date={item.date}/>)
-        } */}
-        {
-          this.state.date.map(item=><Card key={Math.random()} {...item}/>)
+        {      //写法一
+          this.state.date.map(item=><Card key={Math.random()}
+          title={item.title}
+          index={item.index}
+          date={item.date}/>)
+        }
+        {    //写法二，展开数组的写法
+          this.state.date.map(item=><Card key={Math.random()}
+          {...item}/>)
         }
         <Card bgc='blue'/>
         <Card/>
         数值是：{this.state.num}<br/>
-        <Btn1 fatherClick={this.addNum.bind(this)} num={5}/>    //fatherClick属性名 { }当中的是变量
+        <Btn1
+          fatherClick={this.addNum.bind(this)}   //fatherClick属性名 { }当中的是变量
+          num={5}
+        />   
         <Btn1 bg="blue" fatherClick={this.cutNum.bind(this)} num={10}/>
       </div>
     )
