@@ -576,6 +576,39 @@ Card.defaultProps={    //默认属性设置
 export default Card
 ```
 
+props 特点
+
+- 只能从父组件传给子组件
+
+- 子组件通过`{this.props.[name]}`获取`props`值
+
+- 子组件设置默认属性`Btn.defaultProps={}`
+
+- 子组件设置属性格式验证`Btn.propTypes={}`
+
+参考代码如下：
+
+```
+// 设置默认属性
+
+Card.defaultProps={    //默认属性设置
+  index:0,
+  title:"默认标题",
+  date:"---- -- --",
+  bgc:"teal",
+  lh:80,      //如果lh写成
+}
+
+//设置属性格式验证
+
+Card.propTypes={
+  index:React.PropTypes.number,
+  title:React.PropTypes.string,
+  bgc:React.PropTypes.string,
+  date:React.PropTypes.string,
+}
+```
+
 
 
 
