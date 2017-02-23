@@ -700,7 +700,7 @@ Btn1.propTypes={
 
 - 1、初始化，首次渲染
 
-  constructor()
+  constructor()   
 
   componentWillMount()
 
@@ -722,7 +722,7 @@ Btn1.propTypes={
 
 - 3、销毁
 
-  com
+  componentWillUnmount()
 
 
 
