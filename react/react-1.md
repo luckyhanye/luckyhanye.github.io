@@ -647,7 +647,7 @@ class App extends React.Component{
         <Card/>
         数值是：{this.state.num}<br/>
         <Btn1
-          fatherClick={this.addNum.bind(this)}   //fatherClick属性名 { }当中的是变量
+          fatherClick={this.addNum.bind(this)}   //fatherClick属性名 {}当中的是变量
           num={5}
         />   
         <Btn1 bg="blue" fatherClick={this.cutNum.bind(this)} num={10}/>
