@@ -609,6 +609,86 @@ Card.propTypes={
 }
 ```
 
+可以传递函数，也有子组件控制父组件的情况，就是子组件调用父组件的函数方法
+
+参考代码：
+
+```
+//父组件
+
+class App extends React.Component{
+  constructor(){
+    super();
+    this.state={
+      date,
+      num:0,
+    }
+  }
+  addNum(val){      //定义函数  加法
+    this.setState({num:this.state.num+val})
+  }
+  cutNum(n){       //定义函数  减法
+    this.setState({num:this.state.num-n})
+  }
+  render(){
+    return (
+      <div>
+        {/* {
+          this.state.date.map(item=><Card key={Math.random()} title={item.title} index={item.index} date={item.date}/>)
+        } */}
+        {
+          this.state.date.map(item=><Card key={Math.random()} {...item}/>)
+        }
+        <Card bgc='blue'/>
+        <Card/>
+        数值是：{this.state.num}<br/>
+        <Btn1 fatherClick={this.addNum.bind(this)} num={5}/>    //fatherClick属性名 { }当中的是变量
+        <Btn1 bg="blue" fatherClick={this.cutNum.bind(this)} num={10}/>
+      </div>
+    )
+  }
+}
+
+//子组件
+
+class Btn1 extends React.Component{
+  handleClick(){    //定义函数，设置props属性，fatherClick()是调用函数
+    this.props.fatherClick(this.props.num);
+  }
+  render(){
+    let styles={
+      width:"80px",
+      height:"20px",
+      marginTop:"10px",
+      backgroundColor:this.props.bg,   //创建属性
+      borderRadius:this.props.rad,
+      color:"white",
+      border:this.props.bor
+    }
+    console.log(this.props);
+    return (
+      <div >
+        <button style={styles}
+          onClick={this.handleClick.bind(this)}>
+            {this.props.title}
+        </button>
+      </div>
+    )
+  }
+}
+Btn1.defaultProps={    //默认属性设置
+  title:"defaultTitle",
+  bg:"lightGreen",
+  rad:"5px",
+  bor:"2px solid pink",
+}
+
+Btn1.propTypes={
+  fatherClick:React.PropTypes.func.isRequired   //不传属性，会出警告
+}
+
+```
+
 
 
 
