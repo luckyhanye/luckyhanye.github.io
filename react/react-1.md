@@ -696,7 +696,33 @@ Btn1.propTypes={
 
 ```
 
+### react 组件生命周期
 
+- 1、初始化，首次渲染
+
+  constructor()
+
+  componentWillMount()
+
+  render()
+
+  componentDidMount()
+
+- 2、更新阶段（`state`,`props`发生变化是触发）
+
+  componentWillReceiveProps()
+
+  shouldComponentUpdate()
+
+  componentWillUpdate()
+
+  render()
+
+  componentDidUpdate()
+
+- 3、销毁
+
+  com
 
 
 
