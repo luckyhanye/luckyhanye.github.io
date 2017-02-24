@@ -723,3 +723,12 @@ Btn1.propTypes={
 - 3、销毁
 
   componentWillUnmount()
+
+
+### 实例展示
+
+`轮播图`
+
+```
+
+```
