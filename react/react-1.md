@@ -809,6 +809,8 @@ export default App
 
 `event`有如下属性：
 
+```
+
 - boolean bubbles
 
 - boolean cancelable
@@ -836,8 +838,9 @@ export default App
 - number timeStamp
 
 - string type
+```
 
-Clipboard Events  剪贴板事件
+`Clipboard Events`  剪贴板事件
 
 
 > 事件名称：`onCopy`复制事件 `onCut`剪切事件 `onPaste`粘贴事件
