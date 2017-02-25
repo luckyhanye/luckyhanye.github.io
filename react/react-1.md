@@ -700,29 +700,29 @@ Btn1.propTypes={
 
 - 1、初始化，首次渲染
 
-  constructor()   
+  constructor()     //获取实例初试状态
 
-  componentWillMount()
+  componentWillMount()    //首次渲染之前
 
-  render()
+  render()        //渲染
 
-  componentDidMount()
+  componentDidMount()   //首次渲染之后
 
 - 2、更新阶段（`state`,`props`发生变化是触发）
 
-  componentWillReceiveProps()
+  componentWillReceiveProps()   //属性被修改前
 
-  shouldComponentUpdate()
+  shouldComponentUpdate()      //判断是否需要更新
 
-  componentWillUpdate()
+  componentWillUpdate()        // 更新之前
 
-  render()
+  render()                    //渲染
 
-  componentDidUpdate()
+  componentDidUpdate()       //更新之后
 
 - 3、销毁
 
-  componentWillUnmount()
+  componentWillUnmount()      //销毁前
 
 
 ### 实例展示
@@ -730,5 +730,148 @@ Btn1.propTypes={
 `轮播图`
 
 ```
+//slider.js  文件
+
+import React from "react"
+import "./main.css"
+
+
+class Slider extends React.Component{
+  constructor(){
+    super();
+    this.state={
+      nowScroll:0    //第一张
+    }
+  }
+
+  scroll(num){
+    let next=this.state.nowScroll+num
+    if(next >= this.props.imgs.length){
+      return this.setState({nowScroll:0})
+    }
+    if(next<0){
+      return this.setState({nowScroll:this.props.imgs.length-1})
+    }
+    return this.setState({nowScroll:next})
+  }
+
+  handleClick(index){
+    let n=index-this.state.nowScroll;
+    clearInterval(this.interval)
+    this.scroll(n)
+    this.goPlay()
+  }
+
+  goPlay(){    //启动计时器，控制自动播放
+    this.interval=setInterval(()=>this.scroll(1),this.props.time)
+  }
+
+  componentDidMount(){
+    this.goPlay()
+  }
+
+  render(){
+    let liWidth=100/this.props.imgs.length+"%"
+    let styles={
+      ul:{
+        width: this.props.imgs.length*100+"%",
+        left:-this.state.nowScroll*100+"%"
+      }
+    }
+
+    return(
+      <div className="slider-wrap">
+        <ul style={styles.ul}>
+          {
+            this.props.imgs.map(item=> <li key={Math.random()} style={{width:liWidth,backgroundImage:`url(${item})`}}></li>)
+          }
+        </ul>
+        <div className="btn1" onClick={this.handleClick.bind(this,this.state.nowScroll-1)}>⬅️</div>
+        <div className="btn2" onClick={this.handleClick.bind(this,this.state.nowScroll+1)}>➡️</div>
+        <div className="dotted">
+          {this.props.imgs.map((item,index)=><span key={Math.random()}
+            onClick={this.handleClick.bind(this,index)}
+            style={{backgroundColor:this.state.nowScroll==index?'pink':'lightblue'}}></span>)}
+        </div>
+      </div>
+    )
+  }
+}
+
+export default Slider
+
+```
+
+
+### `react-refs`
+
+在标签中定义一个`ref`属性，写法： `<div ref="box"></div>`
+
+通过`this.state.refs.box`   可以获取节点
+
+也可以获取子组件中的方法
+
+参考代码：
+
+```
+//子组件文件
+
+export default class Test extends React.Component{
+  sayHello(){
+    console.log('hello world');
+  }
+  getVue(){
+    return this.refs.input.value
+  }
+  handleClick(){
+    alert("aaaaaaaa")
+  }
+  render(){
+    return (
+      <div>
+        我是Test组件
+        <input type="text" defaultValue="1111aaa" ref="input"></input>
+        <button onClick={this.handleClick.bind(this)}>aa</button>
+      </div>
+    )
+  }
+}
+
+//父组件文件
+
+import React from 'react'
+
+import Test from './test'
+
+
+class App extends React.Component{
+  newClick(){
+    this.refs.newTest.handleClick();
+  }
+  componentDidMount(){
+    console.log(this.refs.test);   //react中获取节点的方法一，
+    this.refs.test.style.color="red"   //更改样式
+
+    console.log(this.refs.newTest);    //refs 也可以获取子组件中的方法
+    this.refs.newTest.sayHello();
+    console.log(this.refs.newTest.getVue());
+
+    ReactDOM.findDOMNode(this.refs.test).style.color="green"--------   //这个方法基本不用
+  }
+  render(){
+    return(
+      <div>
+        app
+        <div ref='test'>aaa</div>
+        <Test ref="newTest"/>     //子组件调用
+        {/* <button id="btn1" ref="btn1" onClick={()=>this.refs.newTest.handleClick()}>1</button> */}
+        <button id="btn1" ref="btn1" onClick={this.newClick.bind(this)}>1</button>
+        <button id="btn2" ref="btn2">2</button>
+      </div>
+    )
+  }
+}
+
+export default App
 
 ```
