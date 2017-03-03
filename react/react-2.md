@@ -1,387 +1,154 @@
 ---
-title: 实例展示
+title: react 组件状态
 layout: linux
 ---
 
-## 实例展示
+## react-state   组件状态
 
-### 实例展示
+### `react` 组件的状态  `state`
 
-`轮播图`
+react 组件状态 state，控制组件内部状态，组件内部状态变化，界面也会随之变化更新
+
 
 ```
-//slider.js  文件
+import React from 'react';
 
-import React from "react"
-import "./main.css"
-
-
-class Slider extends React.Component{
-  constructor(){
-    super();
-    this.state={
-      nowScroll:0    //第一张
+class App extends React.Component{   //创建类 App
+  constructor(){  //定义属性，自行运行
+    super();      //继承
+    this.state={   //定义state（状态）
+      num:0,
+      show:false
     }
   }
-
-  scroll(num){
-    let next=this.state.nowScroll+num
-    if(next >= this.props.imgs.length){
-      return this.setState({nowScroll:0})
-    }
-    if(next<0){
-      return this.setState({nowScroll:this.props.imgs.length-1})
-    }
-    return this.setState({nowScroll:next})
+  handleClick(){   //创建一个方法（函数），没有"this"指向
+    // console.log(this);   //通过 bind 的方法可以获取 this 指向，.bind(this)
+    this.setState({num:this.state.num+1})     //修改state  用setState方法
+  }
+  handleCut(){
+    this.setState({num:this.state.num-1})
+  }
+  handleShow(){
+    this.setState({show:!this.state.show})
   }
 
-  handleClick(index){
-    let n=index-this.state.nowScroll;
-    clearInterval(this.interval)
-    this.scroll(n)
-    this.goPlay()
-  }
-
-  goPlay(){    //启动计时器，控制自动播放
-    this.interval=setInterval(()=>this.scroll(1),this.props.time)
-  }
-
-  componentDidMount(){
-    this.goPlay()
-  }
-
-  render(){
-    let liWidth=100/this.props.imgs.length+"%"
-    let styles={
-      ul:{
-        width: this.props.imgs.length*100+"%",
-        left:-this.state.nowScroll*100+"%"
-      }
-    }
-
-    return(
-      <div className="slider-wrap">
-        <ul style={styles.ul}>
-          {
-            this.props.imgs.map(item=> <li key={Math.random()} style={{width:liWidth,backgroundImage:`url(${item})`}}></li>)
-          }
-        </ul>
-        <div className="btn1" onClick={this.handleClick.bind(this,this.state.nowScroll-1)}>⬅️</div>
-        <div className="btn2" onClick={this.handleClick.bind(this,this.state.nowScroll+1)}>➡️</div>
-        <div className="dotted">
-          {this.props.imgs.map((item,index)=><span key={Math.random()}
-            onClick={this.handleClick.bind(this,index)}
-            style={{backgroundColor:this.state.nowScroll==index?'pink':'lightblue'}}></span>)}
-        </div>
-      </div>
-    )
-  }
-}
-
-export default Slider
-
-```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-这一集来跑一个 React 的 Hello World ，但是重点我们看一下一个最简的
-webpack 配置是怎么样的。
-
-
-### 最简单的 Webpack 配置文件
-
-
-webpack.config.js
-
-```js
-var path = require('path');
-// path 是 nodejs 自带的一个包，所以不用安装，直接使用
-// 用来完成*路径*相关操作
-
-module.exports = {
-  entry: path.resolve(__dirname, 'src/index.js'),
-  output: {
-    path: path.resolve(__dirname, 'build'),
-    filename: 'bundle.js'
-  },
-  module: {
-    loaders: [
-      {
-        test: /\.js$/,
-        loader: 'babel-loader'
-      }
-    ]
-  }
-};
-```
-
-
-### 先说文件名
-
-文件名 webpack.config.js 是默认加载文件名，这样，我们在这个文件的当前位置，运行
-
-```
-webpack
-```
-
-就等价于，运行
-
-```
-webpack --config webpack.config.js
-```
-
-如果文件名改为 webpack.config.dev.js 那么 webpack 默认就不能自动加载了，
-而需要手动指定。
-
-### 一句话说明上面文件的作用
-
-项目是 React 项目，所以项目代码中有 ES6 和 JSX 语法都是浏览器不能直接运行的，所以项目需要先编译后运行。上面的配置文件的作用，一句话概括：
-
->用 babel 把入口文件 index.js 编译成 bundle.js
-
-详细来说，完成了下面几个小任务：
-
-- 编译 JSX 成原生 JS
-- 编译 ES6 成原生 JS
-- 把 index.js 引领的多个 ES6 模块文件，打包成一个 bundle.js
-
-注意：Webpack 已经不仅仅是一个打包器了，它已经发展成一个强大的 build tool
-构建工具，里面可以融入大量辅助开发的插件。所以通常我们就是把 babel 作为 Webpack 的功能之一来使用。
-
-### 添加 Webpack 插件的形式
-
-用 loader 的形式来添加。比如我想给 Webpack 添加 babel 功能。bable 自己是
-一个独立的工具，所以要通过　babel-loader 做媒人，也就是下面代码的由来
-
-```
-loader: 'babel-loader'
-```
-
-包括我们看　package.json 中，也安装了这个包。
-但是只有　babel-loader 是不够的，还需要有　babel 本身，
-package.json 中的这几个包
-
-```json
-"babel-core": "^6.10.4",,
-"babel-preset-es2015": "^6.9.0",
-"babel-preset-react": "^6.11.1",
-"babel-preset-stage-0": "^6.5.0",
-```
-
-都是　babel 工具本身，可以说跟　webpack 没关系，包括　.babelrc 文件，
-也可以说跟　webpack 没啥关系。
-
-### 运行　webpack
-
-运行　webpack 的目的就是把　index.js 编译成　bundle.js　，直观上
-可以这样操作：
-
-```
-cd project/
-webpack
-```
-
-这样，如果　webpack.config.js 在　project 顶级位置，那么默认就可以加载。
-
-大部分同学　webpack 都是局部安装的，也就是安装到了　project/node_modules
-文件夹内，所以运行　webpack 命令会报　`Command Not Found` ，意思是没有 webpack 这个命令。
-解决方法是，运行
-
-```
-cd project/
-./node_modules/.bin/webpack
-```
-就可以执行了。但是每次敲这个路径太麻烦，所以，我们就把它添加到 package.json 中，
-形成一个 npm 脚本（ script ）。具体就是在 package.json 中添加：
-
-```
-"scripts": {
-  "build": " ./node_modules/.bin/webpack"
-},
-```
-
-但是，package.json 有个特点，就是凡是局部安装的命令，例如这里的 webpack ，可以直接找到
-所以最终，写成这样就可以了
-
-
-```
-"scripts": {
-  "build": "webpack"
-},
-```
-
-真正每次要执行编译任务的时候：
-
-```
-npm run build
-```
-
-就可以得到最终输出 bundle.js 了。
-
-
-### 补充知识： NPM script
-
-有些命令比较长，我们想给它起一个简单的外号（别名），便于手敲。设置的位置
-就是在　package.json 文件的　script （脚本）这一部分。所以这个知识点
-叫做　NPM Script 。
-
-
-比如我们有这样一个命令：
-
-```
-webpack --config webpack.config.dev.js
-```
-
-这个命令太长，现在我们可以把它写到　package.json 之中
-
-```
-"scripts": {
-  "build": "webpack --config webpack.config.dev.js"
-},
-```
-
-这样，每次我想执行上面这个命令的时候，只需要
-
-```
-cd project
-npm run build
-```
-
-注意，上面的 run 是必须要加的。但是如果有下面的代码
-
-"scripts": {
-  "start": "node devServer.js"
-},
-
-由于 start 是特殊名字，执行命令，我们可以用
-
-```
-npm run start
-```
-
-但是页可以省略 run 。
-
-
-### 新建　React 项目
-
-先来创建一个最简单的　React 的　Hello World 项目：
-
-文件夹的名叫　router-hello/
-
-src/index.js
-
-```js
-import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
-
-class App extends Component {
-  render(){
-    return(
+  render(){     //render方法
+    return (
       <div>
-        Hello
+        数字是：{this.state.num} <br/>
+        <button onClick={this.handleClick.bind(this)}>+1</button>
+
+        <button onClick={this.handleCut.bind(this)}>-1</button>
+
+        <button onClick={this.handleShow.bind(this)}>{this.state.show?'隐藏':'显示'}</button>
+
+        <p>你现在显示吗？{this.state.show?'显示':"不显示"}</p>
+
+        <p style={{display:this.state.show?'block':"none"}}>你现在显示吗？</p>
       </div>
     )
   }
 }
 
-ReactDOM.render(<App />, document.getElementById('app'));
+// {this.state……   }  可以用在多处
 ```
 
-.babelrc
 
-```
-{
-  "presets": ["es2015", "react", "stage-0"]
-}
-```
+### `react` 组件的状态  `state`  的实例演示
 
-package.json
+- 随机选取
 
-```json
-{
-  "name": "react-with-express",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "build": "webpack"
-  },
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "babel-core": "^6.10.4",
-    "babel-loader": "^6.2.4",
-    "babel-preset-es2015": "^6.9.0",
-    "babel-preset-react": "^6.11.1",
-    "babel-preset-stage-0": "^6.5.0",
-    "react": "^15.2.1",
-    "react-dom": "^15.2.1",
-    "webpack": "^1.13.1"
-  },
-  "dependencies": {
-    "react-router": "^3.0.0"
-  }
-}
-```
+  ```
+  import React from "react";
 
-webpack.config.js
+  let place=["北京","上海","秦皇岛","天津","大理","云南","三亚","桂林"]   //定义一个数组，为选取的内容
 
-```js
-var path = require('path');
-
-module.exports = {
-  entry: path.resolve(__dirname, 'src/index.js'),
-  output: {
-    path: path.resolve(__dirname, 'build'),
-    filename: 'bundle.js'
-  },
-  module: {
-    loaders: [
-      {
-        test: /\.js$/,
-        loader: 'babel-loader'
+  class Where extends React.Component{
+    constructor(){
+      super()
+      this.state={
+        start:false,     //初始状态
+        place,           //数组
+        text:""          //文本
       }
-    ]
+    }
+    changeClick(){     //定义选取的函数方法
+      if(this.state.start){      //进行判断
+        this.setState({start:false})
+        clearInterval(this.interval)
+      }else{
+        this.setState({start:true})
+        this.interval=setInterval(
+          ()=>this.setState({
+            text:this.state.place[Math.floor(Math.random()*this.state.place.length)]
+          }),100
+        )
+      }
+    }
+    render(){
+      return (
+        <div>
+          <p>去哪玩？{this.state.text}</p>
+          <button onClick={this.changeClick.bind(this)}>  //判断按钮的状态
+            {this.state.start?"停止":"开始"}
+          </button>   
+        </div>
+      )
+    }
   }
-};
-```
 
-index.html
+  export default Where
+  ```
+- 选项卡
 
-```
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
-</head>
-<body>
+  ```
+  import React from "react";
 
-  <div id="app"></div>
-  <script src="./build/bundle.js" charset="utf-8"></script>
-</body>
-</html>
-```
+  class SelectBar extends React.Component{
+    style(){
+      return {
+        display:"block",
+        backgroundColor:"cyan",
+        width:"80px",
+        lineHeight:"1.5em",
+        borderRadius:"5px",
+        marginTop:"5px"
+      }
+    }
+    constructor(){
+      super();
+      this.state={
+        show:-1
+      }
+    }
+    handleClick(num){
+      console.log(num)
+      this.setState({show:num})
+    }
+    render(){
+      return (
+        <div>
+          <button style={this.style()} onClick={this.handleClick.bind(this,0)}>
+            选项卡一
+          </button>
+          <button style={this.style()} onClick={this.handleClick.bind(this,1)}>
+            选项卡二
+          </button>
+          <button style={this.style()} onClick={this.handleClick.bind(this,2)}>
+            选项卡三
+          </button>
+          <div>
+            {
+              this.state.show ===0? <p>这是选项卡一</p>:
+              this.state.show ===1? <p>这是选项卡二</p>:
+              this.state.show ===2? <p>这是选项卡三</p>:null
+            }
+          </div>
+        </div>
+      )
+    }
+  }
 
-有了上面的代码，浏览器中打开　index.html ，可以看到　hello 字样。
+  export default SelectBar
+
+  ```
