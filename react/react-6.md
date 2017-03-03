@@ -43,6 +43,41 @@ layout: linux
 ### `Clipboard Events`  剪贴板事件
 
 
-> 事件名称：`onCopy`复制事件 `onCut`剪切事件 `onPaste`粘贴事件
+ event name 事件名称：
 
-> 属性：
+ > onCopy复制事件  onCut剪切事件  onPaste粘贴事件
+
+properties 属性：
+
+> DOMDataTransfer  clipboardData
+
+### `Composition Events`  组成事件
+
+event name 事件名称：
+
+> onCompositionEnd onCompositionStart onCompositionUpdate
+
+properties 属性：
+
+> string data
+
+### `Keyboard Events` 键盘事件
+
+event name 事件名称：
+
+> onKeyDown onKeyPress onKeyUp
+
+properties 属性：
+
+> boolean altKey <br/>
+  number charCode <br/>
+  boolean ctrlKey <br/>
+  boolean getModifierState(key) <br/>
+  string key <br/>
+  number keyCode <br/>
+  string locale <br/>
+  number location <br/>
+  boolean metaKey <br/>
+  boolean repeat <br/>
+  boolean shiftKey <br/>
+  number which <br/>
