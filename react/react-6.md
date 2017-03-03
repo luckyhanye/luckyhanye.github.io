@@ -5,6 +5,8 @@ layout: linux
 
 ## react 事件
 
+参考[react官网教程](https://facebook.github.io/react/docs/events.html#composition-events)
+
 ### `event` 事件
 
 `event`有如下属性：
@@ -81,3 +83,5 @@ properties 属性：
   boolean repeat <br/>
   boolean shiftKey <br/>
   number which <br/>
+
+###
