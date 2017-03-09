@@ -154,6 +154,8 @@ app.get('/username',function(req,res){
 
 ### 用curl 来测试API
 
+curl 是一个安装在系统上的命令，可以用来发http请求，最适合用来测试API
+
 动手写前端代码之前，如果用curl测试一下API，会让写前端代码时候心里更踏实；
 
 ```
@@ -166,6 +168,11 @@ curl -X GET 'http://localhost:3000/username'
 {username:'luckyhanye'}
 ```
 这样，后端API测试通过
+
+如果执行出现如下错误
+
+> Failed to connect to localhost port 3000: Connection refused   //链接localhost:3000失败，链接被拒绝
+  错误原因：后端未启动
 
 ### 安装 axios 发送 http 请求
 
