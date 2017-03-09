@@ -141,7 +141,7 @@ GET /
 
 Postman 是一个辅助工具，用它的目的就是美观方便。但是 Postman 需要用到谷歌的服务，所以需要我们的机器可以翻墙才行。
 
-> 小贴士：翻墙方式：
+> 翻墙方式：
   - 免费的：https://laod.cn
   - Peter 自己用：https://agentwho.rocks。
 
