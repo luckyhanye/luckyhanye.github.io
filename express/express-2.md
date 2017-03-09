@@ -134,7 +134,7 @@ index.html
 
 ### 为何 state 要设置两次
 
-上面代码都是 React 的基础，我们不在重复，唯一可能感觉奇怪的是 为何 constructor 中设置了一个 username 的初始值，然后又在生命周期函数 componentWillMount 中对 username 进行了覆盖。
+上面代码都是 React 的基础，我们不在重复，唯一可能感觉奇怪的是为何 constructor 中设置了一个 username 的初始值，然后又在生命周期函数 componentWillMount 中对 username 进行了覆盖。
 
 为何要这么麻烦呢？这个后面结合 axios 向后台请求数据的代码，就会比较容易看出作用了。
 
@@ -147,7 +147,7 @@ axios 是常用的发 http 请求的工具（现在一般不提发 ajax 请求�
 首先来进行装包：
 
 ```
-npm install --save axios
+$ npm install --save axios
 ```
 
 把 axios 安装到 react-with-express 这个项目中。
@@ -270,25 +270,31 @@ luckyhanye
 ```
 下面进一步调整 componentWillMount 如下：
 
+```
 componentWillMount() {
   axios.get('http://localhost:3000/username').then(function(response){
       return this.setState({username: response.data.username});
   })
 }
+```
+
 重新 build 代码，然后浏览器中运行，报错：
 
-bundle.js:89 Uncaught (in promise) TypeError: Cannot read property 'setState' of undefined(…)(anonymous function) @ bundle.js:89
+> bundle.js:89 Uncaught (in promise) TypeError: Cannot read property 'setState' of undefined(…)(anonymous function) @ bundle.js:89
+
 上面的错误，就意味着 this 没有被定义。这个是一个 JS 基础问题，跟 React 没有 直接联系。相关知识，需要理解 bind(this) 才能透彻理解这个问题。
 
-bind(this) 的视频: http://haoqicat.com/o-o-js/2-2-this
+bind(this) 的[视频](http://haoqicat.com/o-o-js/2-2-this): http://haoqicat.com/o-o-js/2-2-this
 
 这里呢，我们直接给出解决方法，就是使用 ES6 的箭头函数：
 
+```
 componentWillMount() {
   axios.get('http://localhost:3000/username').then((response) => {
       this.setState({username: response.data.username});
   })
 }
+```
 总结
 
 至此，前台页面上成功显示出了，后台的数据。这样，一个前后分离机构，通过 API 通信的应用的 Hello World 就完成了。
