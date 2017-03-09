@@ -21,7 +21,7 @@ layout: linux
 
 > 创建 React 应用的脚手架项目 可以推荐的是 https://github.com/facebookincubator/create-react-app 但是，我们需要对 Webpack 底层做一些了解，所以暂时不推荐使用 脚手架 小贴士结束
 
-所有代码都放到 `react-with-express` 这个文件夹中，代码如下：
+所有代码都放到 `react-frontend` 这个文件夹中，代码如下：
 
 src/index.js
 
@@ -140,6 +140,33 @@ index.html
 
 下面来看如何发请求到服务器端。
 
+### 实现API
+
+开发一个功能，好的做法是，先修改后端代码，也就是先实现API，然后下一步就是用curl这样的命令，来测试一下API，发现API没毛病，然后在动手去屑前端代码。
+
+打开`express-backend`中的index.js代码，添加下面这个API
+
+```
+app.get('/username',function(req,res){
+  res.send({username:'luckyhanye'})
+})
+```
+
+### 用curl 来测试API
+
+动手写前端代码之前，如果用curl测试一下API，会让写前端代码时候心里更踏实；
+
+```
+curl -X GET 'http://localhost:3000/username'
+```
+
+如果后端代码没问题，应该可以看到下面的输出：
+
+```
+{username:'luckyhanye'}
+```
+这样，后端API测试通过
+
 ### 安装 axios 发送 http 请求
 
 axios 是常用的发 http 请求的工具（现在一般不提发 ajax 请求这个说法了）。
@@ -150,7 +177,7 @@ axios 是常用的发 http 请求的工具（现在一般不提发 ajax 请求�
 $ npm install --save axios
 ```
 
-把 axios 安装到 react-with-express 这个项目中。
+把 axios 安装到 react-frontend 这个项目中。
 
 装包之后，就可以到 src/index.js 中去使用了，代码如下
 
