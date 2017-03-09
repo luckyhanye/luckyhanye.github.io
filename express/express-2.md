@@ -11,15 +11,15 @@ layout: linux
 
 ### 前端项目准备
 
-前面的课程中，我们已经学习了 React 开发。那么先在就来写一个完全 跟后台无关的 React 的 Hello World ，要求：
+前面的课程中，我们已经学习了 React 开发。那么先在就来写一个完全跟后台无关的 React 的 Hello World ，要求：
 
-- 页面最终显示出来的，就是你的用户名，例如 happypeter
+- 页面最终显示出来的，就是你的用户名，例如 luckyhanye
 
 - 要用到 react 的 state ，constructor ，生命周期
 
 - 用 ES6/Babel/Webpack
 
-> 创建 React 应用的脚手架项目 可以推荐的是 `https://github.com/facebookincubator/create-react-app` 但是，我们需要对 Webpack 底层做一些了解，所以暂时不推荐使用 脚手架 小贴士结束
+> 创建 React 应用的脚手架项目 可以推荐的是 https://github.com/facebookincubator/create-react-app 但是，我们需要对 Webpack 底层做一些了解，所以暂时不推荐使用 脚手架 小贴士结束
 
 所有代码都放到 `react-with-express` 这个文件夹中，代码如下：
 
@@ -56,45 +56,50 @@ package.json
 
 ```
 {
-  "name": "react-with-express",
+  "name": "hanye-demo",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": " ./node_modules/.bin/webpack"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "pack": "./node_modules/.bin/webpack",
   },
+  "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "babel-core": "^6.10.4",
-    "babel-loader": "^6.2.4",
-    "babel-preset-es2015": "^6.9.0",
-    "babel-preset-react": "^6.11.1",
-    "babel-preset-stage-0": "^6.5.0",
-    "react": "^15.2.1",
-    "react-dom": "^15.2.1",
-    "webpack": "^1.13.1"
+    "babel-core": "^6.23.1",
+    "babel-loader": "^6.3.2",
+    "babel-preset-env": "^1.1.8",
+    "babel-preset-react": "^6.23.0",
+    "webpack": "^2.2.1",
+    "webpack-dev-server": "^2.4.1"
+  },
+  "dependencies": {
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2"
   }
 }
+
 ```
 
 webpack.config.js
 
 ```
-var path = require('path');
-
-module.exports = {
-  entry: path.resolve(__dirname, 'src/index.js'),
-  output: {
-    path: path.resolve(__dirname, 'build'),
-    filename: 'bundle.js'
+module.exports={
+  entry:'./src/index.js',
+  output:{
+    path:'build',
+    filename:'bundle.js',
+    publicPath:'build/'
+  },
+  devtool: 'eval',
+  resolve: {
+    extensions: ['.js','.jsx','.css','.jpg','png']
   },
   module: {
-    loaders: [
-      {
-        test: /\.js$/,
-        loader: 'babel-loader'
-      }
+    rules: [
+      { test: /\.js$/, exclude: /node_modules/, use: "babel-loader" }
     ]
   }
 };
@@ -104,11 +109,13 @@ module.exports = {
 
 ```
 {
-  "presets": ["es2015", "react", "stage-0"],
-  "plugins": []
+  "presets": ["env","react"]
 }
+```
+
 index.html
 
+```
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -242,19 +249,25 @@ Connection: keep-alive
 
 后台代码中，添加下面两个 API
 
+```
 app.get('/username', function(req, res){
   res.json({"username": "happypeter"});
 })
+```
 对应，到前台代码中，调整 componentWillMount ，如下：
 
+```
 componentWillMount() {
   axios.get('http://localhost:3000/username').then(function(response){
       return console.log(response.data.username);
   })
 }
+```
 这样，前台的 console 中，就可以看到返回数据
 
-happypeter
+```
+luckyhanye
+```
 下面进一步调整 componentWillMount 如下：
 
 componentWillMount() {
