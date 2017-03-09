@@ -102,7 +102,7 @@ app.listen(3000, function(){
 ```
 一般回调函数的使用场合就是，之前的一个操作耗时比较长（或者是异步操作） 这样的情况下才使用回调函数。大家暂时不必深究，异步操作未来会成为大家的 必备知识。
 
-### Express 服务器运行起来了，so what ？
+### 运行 Express 服务器
 
 服务器监听端口后，唯一的作用就是来根据端口传入的请求，来执行特定代码。
 
@@ -126,7 +126,7 @@ app.get('/', function(){
 request = verb + path + data
 ```
 
-但是，这里的请求，不是发出请求 ，而是 接收请求 。
+但是，这里的请求，不是发出请求，而是接收请求。
 
 现在来发客户端请求
 
@@ -137,15 +137,13 @@ GET /
 ```
 同时这个请求，必须来自3000端口。
 
-可以发请求的方式不唯一，可以用浏览器地址栏，可以用页面的 form 发， 也可以用 axios 发，后者使用专门的 API 调试工具 curl/postman 来发。
+可以发请求的方式不唯一，可以用浏览器地址栏，可以用页面的 `form` 发， 也可以用 `axios` 发，后者使用专门的 API 调试工具 curl/postman 来发。
 
-Postman 是一个辅助工具，用它的目的就是美观方便。但是 Postman 需要 用到谷歌的服务，所以需要我们的机器可以翻墙才行。
+Postman 是一个辅助工具，用它的目的就是美观方便。但是 Postman 需要用到谷歌的服务，所以需要我们的机器可以翻墙才行。
 
-小贴士：翻墙方式：
-
-- 免费的：https://laod.cn
-
-- Peter 自己用：https://agentwho.rocks 小贴士结束。
+> 小贴士：翻墙方式：
+  - 免费的：https://laod.cn
+  - Peter 自己用：https://agentwho.rocks。
 
 现在，我们就用浏览器的地址栏来发请求。地址栏中输入
 
@@ -153,12 +151,97 @@ Postman 是一个辅助工具，用它的目的就是美观方便。但是 Postm
 http://localhost:3000/
 ```
 
-上的请求，默认动词就是 GET ，同时 :3000 用来指定端口号。
+上的请求，默认动词就是 `GET` ，同时 `:3000` 用来指定端口号。
 
-请求之后，会发现浏览器里没有任何输出，这是因为，我们的 express 服务器根本就没有给前台返回任何字符串，回调函数中的 console.log() 只能把字符串打印到后台。
+请求之后，会发现浏览器里没有任何输出，这是因为，我们的 express 服务器根本就没有给前台返回任何字符串，回调函数中的 `console.log()` 只能把字符串打印到后台。
 
+### 前端和后端
 
+前端，`front-end`，或者也可以叫前台。后端，`back-end` 也可叫后台。
 
+前端代码运行环境是什么呢？
+
+对于我们 Web 开发者来说，就是浏览器。 注意，浏览器是安装在用户自己的机器上的。也就是说前端代码运行在我们自己的笔记本或者 ipad 上，如果前端代码写的烂，那么考验的是我们自己设备的内存大小。
+
+后端代码运行环境是？
+
+是一个放在人家机房里的刀片机。上面运行 Linux 操作系统。刀片机根本就没有显示器，当然也不能跑浏览器。所以后端代码的运行是脱离浏览器的。如果后端写的烂，那么考验的就是刀片机的内存够不够了。
+
+然后，再从 API 的角度来聊聊。前端是 API 的消费者，后端是 API 的生产者。后台 API 写好之后，默认不运行，只有当前端发送过请求来的时候才会触发后台 API 代码运行。
+
+当然，在平常开发的时候，我们并没购买刀片机，所有只能是用自己的笔记本来当刀片机用了。
+这时候，基本可以认为 `express` 写的代码就是`后端代码`，`react` 写的代码就是`前端代码`。
+
+### 继续前面的代码：返回字符串
+
+前面的回调函数中，`console.log `打印字符串，只是出现在后端（服务器端）。前端得不到任何反馈。所以，我们可以把代码做如下修改
+
+```
+app.get('/', function(req, res){
+  res.send('Hello World');
+})
+```
+上面代码中 req 是 `request` 请求的简写， res 是 `response` 响应的简写 。`res.send('Hello World')`的作用是从后端向前端浏览器返回字符串 `Hello World` 。
+
+### 总结
+
+到这里，我们一个 Express 的 Hello World API 就制作完毕， 我们需要掌握的概念就是：
+
+- 前端和后端的区别
+
+- API 基本格式
+
+- Express 使用方式
+
+### 全部代码
+
+package.json 如下：
+
+```
+{
+  "name": "express-hello",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.14.0"
+  }
+}
+```
+
+index.js 代码如下
+
+```
+const express =  require('express');
+const app = express();
+```
+
+// 下面三行就是我们实现的一个 API
+```
+app.get('/', function(req, res){
+  res.send('Hello World');
+})
+
+app.listen(3000, function(){
+  console.log('running on port 3000...');
+});
+```
+
+上面两个文件都放在一个 express-hello 文件夹中，然后
+
+```
+cd express-hello
+npm install
+node index.js
+```
+
+就可以把代码运行起来了。
 
 
 ### 补充知识：框架，库，工具
