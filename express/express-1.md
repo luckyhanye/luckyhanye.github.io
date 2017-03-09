@@ -1,0 +1,29 @@
+---
+title: 上手 Express 框架
+layout: linux
+---
+
+## 上手 Express 框架
+
+前面课程中介绍了 React , React 是一个 前端框架 ，前端框架是运行在浏览器 环境下的，负责 UI（ User Interface 用户界面）。
+
+但是，我们想一想，如果只有 UI ，那么用户要看的数据从哪里来？用户需要保存的数据 如何进行运算之后保存到数据库中？这部分的功能就需要后端代码来完成。今天我们要介绍的 Express 就是一个后端(back-end)框架。
+
+我们可能知道，当下实现后台服务，最流行的方式就是使用 Nodejs(提供大家在服务器端运行javeScript的可能，是JS的运行环境) , Express 就是 Nodejs 的 一个框架，而且是 Nodejs 各种后台框架中最为通用，最为流行的一个，没有之一。所以学习 Nodejs 最佳途径就是从 Express 入手。
+
+### 你好，Express
+
+Express 基于 Node.js 平台，快速、开放、极简的 web 开发框架。[官网](http://www.expressjs.com.cn/)上，
+首页最能吸引我们注意的就是 API(Application Program Interface) 这个关键字。API 是应用开发接口，简称接口。
+而 Express 就是用来制作后台接口的，或者说叫制作后台 API 的。
+
+那么之后，我们整个项目的架构，就是用 Express 来制作后台 API , 这些 API 的使用 者就是前台 React 代码。
+
+### Express应用
+
+第一步，要新建文件夹，并把它初始化为一个 Nodejs 项目：
+
+```
+$ npm install express --save
+```
+注意：项目名称不能与安装的包名相同
