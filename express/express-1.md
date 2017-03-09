@@ -41,6 +41,14 @@ npm install --save express     //安装的包
 Refusing to install express as a dependency of itself
 ```
 
+### 写后台代码，用 ES6 吗？
+
+我们的前台代码，因为有 Babel 的支持，可以全部采用 ES6 来写。后台代码，我们会让它直接运行在 Nodejs 之上，不用 Babel （ 当然也可以用，但是配置比较麻烦，不值当的）。
+
+如果我们到 Node.green 网站上，可以看到新版的 Nodejs (7.0 版本以上)对于 ES6 的支持已经到了99% 。所以， 不用 Babel 我们也可以直接使用 ES6 语法，但是唯一要 注意的就是不能用 import （ 也就是说 nodejs 是不支持 ES6 模块语法的），我们的后台代码暂时需要用 require 来替代 import 。require 用的是 commonjs 模块语法， 这个是 Nodejs 原生支持的。
+
+最终结论，ES6 可以用。
+
 
 
 
