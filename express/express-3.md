@@ -13,16 +13,20 @@ layout: linux
 
 ### 数据库基本概念
 
-https://www.mongodb.com/ 是 MongoDB 的[官网](https://www.mongodb.com/)。
+  https://www.mongodb.com/ 是 MongoDB 的[官网](https://www.mongodb.com/)。
 
-http://www.mongoing.com/ 是 MongoDB [中文社区](http://www.mongoing.com/)。
+  http://www.mongoing.com/ 是 MongoDB [中文社区](http://www.mongoing.com/)。
 
-http://www.mongodb.org.cn/ 是 MongoDB [中文网](http://www.mongodb.org.cn/)。
+  http://www.mongodb.org.cn/ 是 MongoDB [中文网](http://www.mongodb.org.cn/)。
 
 - MongoDB：是一个数据库软件，有时候我们简称它叫一个数据库，但是其实一个 MongoDB 运行起来可以里面同时运行多个数据库
+
 - Database: 数据库。一般做法是，一个项目对应一个数据库。
+
 - Collection: 集合。类似于关系型数据库下的表的概念。
+
 - Document：文档。一个集合中会包含多个文档。文档对应关系型数据库中的 记录 这个概念。
+
 
 举例子来说，一个项目叫 ** facebook ** ，那么我们就建立一个 ** c database ** 来存储这个项目的所有数据。 可以创建多个集合，比如 users 。一个 users 集合中，可以包含多个文档，每个文档中存储一个 user 的信息（信息可以有多项：email, name, brithday …）。
 
@@ -83,7 +87,9 @@ mongo
 
 查看数据库有没有创建成功，可以用
 
-`show dbs`
+  ```
+  show dbs
+  ```
 
 暂时，没有保存数据到该数据库，所以，输出中没有 digicity 。
 
@@ -120,7 +126,7 @@ mongo
 
   代码中比较推荐用 save ，不推荐 update。
 
- db.users.update({_id: ObjectId("584b62b830a2a2cbf4c4c3f6")}, {username: "billie66", email:"billie@billie.com"})
+db.users.update({_id: ObjectId("584b62b830a2a2cbf4c4c3f6")}, {username: "billie66", email:"billie@billie.com"})
 update 接口中有两个参考，第一个是查询条件，用来定位要更新的是哪一个文档，后面是更新后的数据。
 
 第三步，查。
