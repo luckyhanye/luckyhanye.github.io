@@ -179,6 +179,7 @@ WriteResult({ "nRemoved" : 1 })
 
 mongo shell 中的基本操作我们就介绍到这里。但是，我们发现敲命令比较麻烦，所以，可以考虑 使用图形化的界面来操作 MongoDB 。
 
+
 ### 图形化的操作界面 mongo-express
 
 Mongo-express 是一个用 express 技术开发的，MongoDB 的　GUI (图形界面)。可以方便美观的操作 MongoDB 中的数据。
@@ -269,6 +270,14 @@ Connecting to digicity...
 ```
 
 虽然上面有一个　MongoError 但是，浏览器中打开：http://localhost:8081 可以开始使用 mongo-express 了。
+
+### 补充
+
+如何删除一个已有的数据库：
+
+```
+
+```
 
 ### 总结
 
