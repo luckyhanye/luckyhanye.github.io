@@ -245,7 +245,7 @@ Access-Control-Allow-Origin: *
 保证后台启动状态，现在我们看看当前后台资源的 header 设置，可以用下面的 curl 命令
 
 ```
-$ curl -I http://localhost:3000/
+$ curl -I http://localhost:3000/username
 HTTP/1.1 200 OK
 X-Powered-By: Express
 Content-Type: text/html; charset=utf-8
@@ -339,6 +339,6 @@ componentWillMount() {
   })
 }
 ```
-总结
+### 总结
 
-至此，前台页面上成功显示出了，后台的数据。这样，一个前后分离机构，通过 API 通信的应用的 Hello World 就完成了。
+至此，前台页面上成功显示出了，后台的数据。这样，一个前后端分离架构，通过 API 通信的应用，我们就完成了。
