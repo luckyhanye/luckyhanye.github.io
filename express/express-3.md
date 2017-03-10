@@ -98,10 +98,10 @@ mongo
 
 第一步，创建一个数据库
 
-  ```
-  $ use react-express-demo
-  switched to db react-express-demo
-  ```
+```
+$ use react-express-demo
+switched to db react-express-demo     //切换到 react-express-demo 数据库中
+```
 
 下面的输出 switched to db react-express-demo 意思是：已经切换到 react-express-demo 这个数据库里面了。
 
@@ -113,14 +113,15 @@ show dbs
 
 暂时，没有保存数据到该数据库，所以，输出中没有 react-express-demo 。
 
-- 第二步，创建集合
+第二步，创建集合
 
-  创建集合，集合名称叫 users 。
+创建集合，集合名称叫 users 。
 
-  ```
-  db.createCollection('users')
-  { "ok" : 1 }
-  ```
+```
+db.createCollection('users')
+{ "ok" : 1 }
+```
+这时，在输入`show dbs` 输出，就可以看到 react-express-demo
 
 - 第三步，把一条数据，保存成一条文档（ Document ）
 
@@ -131,23 +132,23 @@ show dbs
 
 输出结果 WriteResult({ "nInserted" : 1 }) 表述成功写入一条数据。
 
-- 第四步，列出一个集合中的所有文档：
+第四步，列出一个集合中的所有文档：
 
-  ```
-  db.users.find({})
-  ```
+```
+db.users.find({})
+```
 
 对数据记录进行增删改查
 
 **第一步，增。**
 
-使用 updata() 接口。
+使用 insert() 接口。
 
 > db.users.insert({username: 'billie', email: 'billie@billie.com'})
 
 **第二步，改。**
 
-代码中比较推荐用 save ，不推荐 update。
+使用 update() 接口
 
 > db.users.update({_id: ObjectId("584b62b830a2a2cbf4c4c3f6")},
 > {username: "billie66", email:"billie@billie.com"})
@@ -157,13 +158,15 @@ update 接口中有两个参考，第一个是查询条件，用来定位要更�
 
 **第三步，查。**
 
-> db.users.find({})
+使用 find() 接口
+
+> db.users.find()
 
 可以列出所有的 users 集合中的文档。
 
 **第四步，删。**
 
-使用remove()
+使用 remove() 接口
 
 删除特定一个文档：
 
@@ -173,13 +176,14 @@ WriteResult({ "nRemoved" : 1 })
 删除集合中所有文档：
 
 > db.users.remove({})
+
 mongo shell 中的基本操作我们就介绍到这里。但是，我们发现敲命令比较麻烦，所以，可以考虑 使用图形化的界面来操作 MongoDB 。
 
-图形化的操作界面 mongo-express
+### 图形化的操作界面 mongo-express
 
-Mongo-express 是一个用 express 技术开发的，MongoDB 的　GUI (图形界面)　。可以方便美观的 操作 MongoDB 中的数据。
+Mongo-express 是一个用 express 技术开发的，MongoDB 的　GUI (图形界面)。可以方便美观的操作 MongoDB 中的数据。
 
-参考：http://haoqicat.com/hand-in-hand-react/4-mongo-express
+参考：[好奇猫](http://haoqicat.com/hand-in-hand-react/4-mongo-express)
 
 一般系统上的工具，我们用全局安装就可以
 
@@ -192,14 +196,14 @@ mongo-express 装好之后，我们需要通知它，到底要连接到哪个数
 所以首先第一步，我们先要找到　`mongo-express` 的配置文件。
 
 ```
-$ npm list -g mongo-express
-/home/peter/.nvm/versions/node/v7.1.0/lib
+$ npm list -g mongo-express    //查找 mongo-express 所在路径
+/usr/local/lib
 ```
 
 找到安装位置后，就可以进入安装文件夹，来修改配置文件了。
 
 ```
-cd /home/peter/.nvm/versions/node/v7.1.0/lib
+cd /usr/local/lib
 cd node_modules
 cd mongo-express
 cp config.default.js config.js
@@ -223,11 +227,11 @@ mongo = {
 
 ```
 mongo = {
-  db:       'digicity',
+  db:       'react-express-demo',
   username: '',
   password: '',
   ...
-  url:      'mongodb://localhost:27017/digicity',
+  url:      'mongodb://localhost:27017/react-express-demo',
 };
 ```
 
@@ -248,7 +252,7 @@ basicAuth: {
 },
 ```
 
-用户名是　admin ，密码是　pass 。
+用户名是　**admin** ，密码是　**pass** 。
 
 启动　mongo-express 需要开启一个新的命令行标签。然后输入
 
