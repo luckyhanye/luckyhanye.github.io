@@ -215,11 +215,12 @@ header is present on the requested resource.
 Origin 'null' is therefore not allowed access.
 ```
 
-`XMLHttpRequest` 是发 HTTP 请求的底层机制，是浏览器自带功能。上面的 报错翻译如下：
+`XMLHttpRequest` 是发 HTTP 请求的底层机制，是浏览器自带功能。上面的报错翻译如下：
 
-> 无法加载后台 http://localhost:3000 . 被请求的资源中没有设置 Access-Control-Allow-Origin 头部。源头设置为 Null ，所以不允许 访问。
+> 无法加载后台 http://localhost:3000 . 被请求的资源中没有设置
+> Access-Control-Allow-Origin 头部。源头设置为 Null ，所以不允许 访问。
 
-Access-Control-Allow-Origin 字面意思：允许源头访问控制。服务器上的 默认是不允许其他网址的网站请求资源的，如果需要开通权限，就需要设置这个选项。
+Access-Control-Allow-Origin 字面意思：访问控制允许来源。服务器上的默认是不允许其他网址(或者网址相同，但是端口号不同)的网站请求资源的(也就是默认不允许**跨域请求**)，如果需要开通权限，就需要设置这个选项。
 
 那么，如何开通服务器上的这个资源访问权限呢？就是要在服务器上做下面的设置
 
@@ -233,7 +234,7 @@ Access-Control-Allow-Origin: *
 
 解决方案采用： [https://github.com/expressjs/cors](https://github.com/expressjs/cors)
 
-cors 是 Cross Origin Resource Share ，安装了这个包就可以完成
+cors 是 Cross Origin Resource Share(译：跨域资源共享) ，安装了这个包就可以完成
 
 ```
 Access-Control-Allow-Origin: *
@@ -254,7 +255,7 @@ Date: Thu, 08 Dec 2016 01:51:44 GMT
 Connection: keep-alive
 ```
 
-curl 是专门用来测试 API 的一个命令行工具，`-I` 选项用来专门活动服务器 返回的 header 。命令返回的信息，就是服务器端被请求资源的的 header 。 很明确是没有 Access-Control-Allow-Origin 这一项的。下面我们安装 cors 这个包，就可以解决这个问题。
+curl 的 `-I` 选项用来拿到服务器返回的 header 。命令返回的信息，就是服务器端被请求资源的的 header 。 很明显是没有 Access-Control-Allow-Origin 这一项的。下面我们安装 cors 这个包，就可以解决这个问题。
 
 具体步骤如下：
 
@@ -265,6 +266,12 @@ npm install --save cors
 ```
 
 再次提醒：这个包要安装到后台代码中。
+
+```
+cors = require('cors')
+
+app.use(cors());
+```
 
 然后按照文档，添加下面两行代码，再重启服务器代码：
 
