@@ -7,11 +7,11 @@ layout: linux
 
 网站运行需要有大量的数据的读取，同时用户也需要把自己的数据存储到服务器，对于海量数据的操作。 就需要有专门的软件配合，这个软件就是数据库。
 
-当前比较流行的数据库，Oracle 甲骨文，SQL server ，这些都是商业数据库。但是，开源数据库 目前更受青睐。一个是 Mysql , 另一个是 MongoDB 。
+当前比较流行的数据库，Oracle 甲骨文，SQL server，这些都是商业数据库。但是，开源数据库目前更受青睐。一个是 Mysql , 另一个是 MongoDB 。
 
-我们课程中采用 MongoDB 数据库。MongoDB 是非关系型数据库，传统的关系型数据库的 table 表 和 record 记录，在 MongoDB 这里都有对应的替代物。
+我们课程中采用 MongoDB 数据库。MongoDB 是非关系型数据库，传统的关系型数据库的 table (表) 和 record (记录)，在 MongoDB 这里都有对应的替代物。
 
-### 数据库基本概念
+### MongoDB 基本概念
 
   https://www.mongodb.com/ 是 MongoDB 的[官网](https://www.mongodb.com/)。
 
@@ -19,41 +19,52 @@ layout: linux
 
   http://www.mongodb.org.cn/ 是 MongoDB [中文网](http://www.mongodb.org.cn/)。
 
-- MongoDB：是一个数据库软件，有时候我们简称它叫一个数据库，但是其实一个 MongoDB 运行起来可以里面同时运行多个数据库
+- MongoDB：是一个数据库软件，有时候我们简称它叫一个数据库，但是其实一个 MongoDB 运行起来以后，里面可以同时运行多个数据库
 
 - Database: 数据库。一般做法是，一个项目对应一个数据库。
 
-- Collection: 集合。类似于关系型数据库下的表的概念。
+- Collection: 集合。类似于关系型数据库下的 **表** 的概念。例如全班同学的信息
 
-- Document：文档。一个集合中会包含多个文档。文档对应关系型数据库中的 记录 这个概念。
+- Document：文档。一个集合中会包含多个文档（一个文档中存储一个同学的信息）。文档对应关系型数据库中的 记录 这个概念。
 
 
-举例子来说，一个项目叫 **facebook** ，那么我们就建立一个 **c database** 来存储这个项目的所有数据。 可以创建多个集合，比如 users 。一个 users 集合中，可以包含多个文档，每个文档中存储一个 user 的信息（信息可以有多项：email, name, brithday …）。
+举例子来说，一个项目叫 **facebook** ，那么我们就建立一个 **database** 来存储这个项目的所有数据。 一个数据库中可以创建多个集合，比如 users 。一个 users 集合中，可以包含多个文档，每个文档中存储一个 user 的信息（信息可以有多项：email, name, brithday …）。
 
-安装
+### 安装
 
 在 deepin Linux 或者 ubuntu 系统，都是一样的命令
 
 直接运行命令
 
+```
 sudo apt-get install mongodb
+```
+
 这个是安装的深度公司服务器上的 mongodb 。可能版本比较老。
 
 可以按照这里的步骤 安装比较新的版本：
 
 ```
-sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80
+$ sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80
 --recv 0C49F3730359A14518585931BC711F9BA15703C6
 
-echo "deb http://repo.mongodb.org/apt/ubuntu trusty/mongodb-org/3.4 multiverse" | sudo tee
+$ echo "deb http://repo.mongodb.org/apt/ubuntu trusty/mongodb-org/3.4 multiverse" | sudo tee
  /etc/apt/sources.list.d/mongodb-org-3.4.list
 
-sudo apt-get update
+$ sudo apt-get update
 
-sudo apt-get install -y mongodb-org
+$ sudo apt-get install -y mongodb-org
 ```
 
-命令行操作，使用 Mongo Shell
+Mac系统用HomeBrew安装
+
+```
+brew install mongodb
+```
+
+装好之后就可以来使用了
+
+### 通过命令行操作 MongoDB
 
 启动 mongodb
 
@@ -61,6 +72,7 @@ sudo apt-get install -y mongodb-org
 mkdir -p data/db
 mongod --dbpath=./data/db
 ```
+上面，第一步创建一个文件夹用来存储数据；第二个命令就是启动 Mongodb ，注意上面的命令就是 `mongod` 。后面传递的选项就是给出数据存储位置。
 
 这样，mongodb 就启动成功了，启动端口是 27017 。
 
@@ -84,7 +96,7 @@ mongo
 
 **具体操作步骤如下：**
 
-- 第一步，创建一个数据库
+第一步，创建一个数据库
 
   ```
   $ use digicity

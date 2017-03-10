@@ -199,9 +199,8 @@ import axios from 'axios';
 
 ```
 componentWillMount() {
-  axios.get('http://localhost:3000/').then(function(response){
-      return console.log(response);
-  })
+  axios.get('http://localhost:3000/')
+  .then(res=>console.log(res))
 }
 ```
 
