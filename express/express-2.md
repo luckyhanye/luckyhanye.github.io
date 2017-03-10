@@ -159,7 +159,7 @@ curl 是一个安装在系统上的命令，可以用来发http请求，最适�
 动手写前端代码之前，如果用curl测试一下API，会让写前端代码时候心里更踏实；
 
 ```
-curl -X GET 'http://localhost:3000/username'
+curl -X GET http://localhost:3000/username
 ```
 
 如果后端代码没问题，应该可以看到下面的输出：
@@ -167,6 +167,7 @@ curl -X GET 'http://localhost:3000/username'
 ```
 {username:'luckyhanye'}
 ```
+
 这样，后端API测试通过
 
 如果执行出现如下错误
@@ -175,6 +176,8 @@ curl -X GET 'http://localhost:3000/username'
   错误原因：后端未启动
 
 ### 安装 axios 发送 http 请求
+
+引入axios。axios 按照[官网]()的说法，他是一个`http client`(http 的客户端),换句话说，他是专门用来发http请求的
 
 axios 是常用的发 http 请求的工具（现在一般不提发 ajax 请求这个说法了）。
 
@@ -228,7 +231,7 @@ Access-Control-Allow-Origin: *
 
 跨域请求的解决方案
 
-解决方案采用： https://github.com/expressjs/cors
+解决方案采用： [https://github.com/expressjs/cors](https://github.com/expressjs/cors)
 
 cors 是 Cross Origin Resource Share ，安装了这个包就可以完成
 
@@ -251,7 +254,7 @@ Date: Thu, 08 Dec 2016 01:51:44 GMT
 Connection: keep-alive
 ```
 
-curl 是专门用来测试 API 的一个命令行工具，-I 选项用来专门活动服务器 返回的 header 。命令返回的信息，就是服务器端被请求资源的的 header 。 很明确是没有 Access-Control-Allow-Origin 这一项的。下面我们安装 cors 这个包，就可以解决这个问题。
+curl 是专门用来测试 API 的一个命令行工具，`-I` 选项用来专门活动服务器 返回的 header 。命令返回的信息，就是服务器端被请求资源的的 header 。 很明确是没有 Access-Control-Allow-Origin 这一项的。下面我们安装 cors 这个包，就可以解决这个问题。
 
 具体步骤如下：
 
