@@ -106,7 +106,7 @@ res.json()
 app.get('/users', function(req, res){
   // res.json({"users": "happypeter"});
   User.find().exec(function(err, users) {
-    res.json({users});
+    res.json({users});     //users 用大括号包裹起来
   });
 })
 ```
@@ -120,7 +120,7 @@ $ curl -X GET http://localhost:3000/users
 ```
 这样，后台代码就准备完毕。
 
-后台代码
+后台代码：
 
 express-backend 文件夹中，有下面的文件：
 
@@ -136,21 +136,20 @@ const User = require('./models/user');
 
 mongoose.Promise = global.Promise;
 mongoose.connect('mongodb://localhost:27017/react-express-demo');
-```
 
 // 执行此行代码之前，要保证 mongodb 数据库已经运行了，而且运行在 27017 端口
 
-```
-var db = mongoose.connection;
+
+
+let db = mongoose.connection;
 db.on('error', console.log);
 db.once('open', function() {
   console.log('success');
 });
-```
+
 
 // 下面三行就是我们实现的一个 API
 
-```
 app.get('/users', function(req, res){
   // res.json({"users": "happypeter"});
   User.find().exec(function(err, users) {
@@ -161,8 +160,11 @@ app.get('/users', function(req, res){
 app.listen(3000, function(){
   console.log('running on port 3000...');
 });
+```
+
 models/user.js
 
+```
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
@@ -173,16 +175,17 @@ const UserSchema = new Schema(
   }
 );
 module.exports = mongoose.model('User', UserSchema);
-```
+
 // `User` 会自动对应数据库中的　users 这个集合
 // 如果这里是　Apple 那么就会对应　apples 集合
 // 如果这里是　Person 那么就会对应　people 集合
+```
 
 package.json
 
 ```
 {
-  "name": "express-hello",
+  "name": "express-backend",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -229,36 +232,11 @@ componentWillMount() {
 }
 ```
 
-但是，如果在　render 函数中，我们这样写
+### 使用 map 展开数组
 
-render(){
-  return(
-    <div>
-      {this.state.users}
-    </div>
-  )
-}
-就会触发下面的错误：
-
-bundle.js:894 Uncaught (in promise) Error: Objects are not valid as a React child (found: object with keys {_id, username, email}). If you meant to render a collection of children, use an array instead or wrap the object using createFragment(object) from the React add-ons. Check the render method of `App`.(…)
-报错信息的大致意思是：对象不是被允许的　React 子元素。
-
-解决方式，看下一小部分。
-
-使用 map 展开数组
-
-我们可以使用　ES6 自带的　map 来完成该任务。也可以加载　lodash 的　map 方法。
-
-小贴士：什么是　lodash ? lodash 是一个　JS 的库，它里面提供了很多　JS 的基础方法，方便使用　JS 语言。 使用　lodash 是写　JS 代码的标配。 小贴士结束
-
-安装　lodash
-
-npm i --save lodash
-然后，到　index.js 中导入一下
-
-import map from 'lodash/fp/map';
 render 函数做如下调整：
 
+```
 render(){
   const userList = map((user) => {
     return (
@@ -274,10 +252,13 @@ render(){
     </div>
   )
 }
+```
+
 这样，页面中就可以显示出所有用户的用户名的列表了。
 
-前台代码
+### 前台代码
 
+```
 src/index.js
 
 import React, { Component } from 'react';
@@ -306,7 +287,7 @@ class App extends Component {
           {user.username}
         </div>
       )
-    }, this.state.users);
+    });
 
     return(
       <div>
@@ -317,8 +298,11 @@ class App extends Component {
 }
 
 ReactDOM.render(<App/>,document.getElementById('app'));
+```
+
 webpack.config.js 如下：
 
+```
 var path = require('path');
 
 module.exports = {
@@ -336,14 +320,20 @@ module.exports = {
     ]
   }
 };
+```
+
 .babelrc 如下
 
+```
 {
   "presets": ["es2015", "react", "stage-0"],
   "plugins": []
 }
+```
+
 index.html 如下：
 
+```
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -358,3 +348,4 @@ index.html 如下：
   <script src="./build/bundle.js" charset="utf-8"></script>
 </body>
 </html>
+```
