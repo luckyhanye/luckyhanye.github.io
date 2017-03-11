@@ -275,8 +275,19 @@ Connecting to digicity...
 
 如何删除一个已有的数据库：
 
+首先，切换到要删除的数据库 ，test
+
+```
+$ use test  
+
+switched to db react-express-demo     //切换到 test 数据库成功
+
 ```
 
+然后删除数据库
+
+```
+db.dropDatabase()
 ```
 
 ### 总结
