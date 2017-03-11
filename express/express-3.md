@@ -236,7 +236,7 @@ mongo = {
 };
 ```
 
-上面的　digicity 就是我们要操作的数据库的名字，这个是通过　mongo shell 中，执行
+上面的　react-express-demo 就是我们要操作的数据库的名字，这个是通过　mongo shell 中，执行
 
 ```
 show dbs
@@ -255,7 +255,7 @@ basicAuth: {
 
 用户名是　**admin** ，密码是　**pass** 。
 
-启动　mongo-express 需要开启一个新的命令行标签。然后输入
+启动　mongo-react-express-demo 需要开启一个新的命令行标签。然后输入
 
 ```
 $ mongo-express
