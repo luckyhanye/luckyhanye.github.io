@@ -58,6 +58,7 @@ section h3{
 }*/
 pre{
 	padding: 15px;
+	overflow:scroll;
 	background-color: #fff5d7;
 	border-radius: 8px;
 	border:1px solid #ccc;
@@ -65,7 +66,6 @@ pre{
 	opacity:0.5;
 	color:#00a7cf;
 	line-height: 1.5em;
-	/*overflow:scroll;*/
 }
 ul{
 	padding-left: 30px;
