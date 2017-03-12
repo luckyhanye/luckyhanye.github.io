@@ -57,8 +57,8 @@ section h3{
 	line-height: 25px;
 }*/
 pre{
-	/*padding: 15px;*/
-	overflow:scroll;
+	padding: 15px;
+	/*overflow:scroll;*/
 	background-color: #fff5d7;
 	border-radius: 8px;
 	border:1px solid #ccc;
