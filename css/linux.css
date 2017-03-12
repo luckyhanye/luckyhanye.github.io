@@ -71,16 +71,23 @@ pre{
 	border-radius: 8px;
 	border:1px solid #ccc;
 	line-height: 1.5em;
+	color:#595757;
 }
-code .nx{
+/*code .nx{
 	color:black;
-}
+}*/
 code .kd{
-	color:teal;
+	color:#1e9407;
 }
 code .s1{
 	background-color: rgba(234,205,248,0.6);
-	color:#fc883a;
+	color:#fa7e11;
+}
+code .kr{
+	color:red;
+}
+code .mi{
+	color:#25f8c9;
 }
 ul{
 	padding-left: 30px;
