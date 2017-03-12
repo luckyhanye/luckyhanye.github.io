@@ -64,8 +64,10 @@ pre{
 	border:1px solid #ccc;
 	margin:20px 0;
 	opacity:0.5;
-	color:#00a7cf;
 	line-height: 1.5em;
+}
+span.nx{
+	color:red;
 }
 ul{
 	padding-left: 30px;
