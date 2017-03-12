@@ -61,7 +61,7 @@ section h3{
 	color:#14877E;
 	line-height: 25px;
 }*/
-pre{
+.highlight{
 	padding: 15px;
 	/*overflow:scroll;*/
 	background-color: rgba(252,240,223,0.6);
