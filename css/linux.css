@@ -5,11 +5,6 @@
 body{
 	background-color: #f3ebdc;
 }
-p img{
-	display:block;
-	width: 60vw;
-	margin: 0 auto;
-}
 .header{
 	background-color: teal;
 	/*line-height: 30px;*/
@@ -41,6 +36,11 @@ section p{
 	font-family: "微软雅黑","黑体";
 	font-size: 15px;
 	line-height: 1.8em;
+}
+section img{
+	display:block;
+	width: 60vw;
+	margin: 0 auto;
 }
 section h2{
 	font-family: "宋体";
