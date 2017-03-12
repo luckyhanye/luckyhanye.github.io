@@ -12,8 +12,8 @@ layout: linux
 server.js
 
 ```
-var express = require('express');
-var app = express();
+let `express` = require('express');
+let `app` = express();
 
 app.listen(3000, function(err) {
   console.log('Listening at http://localhost:3000');
