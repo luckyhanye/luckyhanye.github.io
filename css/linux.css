@@ -66,7 +66,14 @@ pre{
 	line-height: 1.5em;
 }
 span .nx{
-	color:red;
+	color:black;
+}
+span .kd{
+	color:teal;
+}
+span .s1{
+	background-color: rgba(234,205,248,0.6);
+	color:#fc883a;
 }
 ul{
 	padding-left: 30px;

@@ -32,7 +32,7 @@ JSX(JaveScript XML的缩写) 语法，允许我们在JS里直接去写标签。
 
 语法参考代码：
 
-```
+```js
 let name="lucy";   //定义变量（）
 let age=20;        
 let male=0;
