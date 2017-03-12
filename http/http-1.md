@@ -19,7 +19,7 @@ HTTP 协议最重要的两个概念就是请求（ request ）和响应（ respo
 
 图形展示：
 
-![](../images/http响应.png)
+![alt ""](../images/http响应.png)
 
 代码演示
 

@@ -37,7 +37,7 @@ section p{
 	font-size: 15px;
 	line-height: 1.8em;
 }
-section img{
+section p img{
 	display:block;
 	width: 60vw;
 	margin: 0 auto;
@@ -70,13 +70,13 @@ pre{
 	margin:20px 0;
 	line-height: 1.5em;
 }
-/*span .nx{
+pre span .nx{
 	color:black;
-}*/
-span .kd{
+}
+pre span .kd{
 	color:teal;
 }
-span .s1{
+pre span .s1{
 	background-color: rgba(234,205,248,0.6);
 	color:#fc883a;
 }
