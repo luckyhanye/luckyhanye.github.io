@@ -65,7 +65,7 @@ pre{
 	opacity:0.5;
 	color:#00a7cf;
 	line-height: 1.5em;
-	overflow:scroll;
+	/*overflow:scroll;*/
 }
 ul{
 	padding-left: 30px;
