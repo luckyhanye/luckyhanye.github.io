@@ -71,11 +71,10 @@ pre{
 	border-radius: 8px;
 	border:1px solid #ccc;
 	line-height: 1.5em;
+}
+code .nx{
 	color:#595757;
 }
-/*code .nx{
-	color:black;
-}*/
 code .kd{
 	color:#1e9407;
 }
