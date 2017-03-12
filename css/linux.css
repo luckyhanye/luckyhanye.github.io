@@ -5,6 +5,10 @@
 body{
 	background-color: #f3ebdc;
 }
+img{
+	width: 70%;
+	margin: 0 auto;
+}
 .header{
 	background-color: teal;
 	/*line-height: 30px;*/
