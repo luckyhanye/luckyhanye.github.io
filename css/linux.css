@@ -61,22 +61,24 @@ section h3{
 	color:#14877E;
 	line-height: 25px;
 }*/
+.language-js,.highlighter-rouge{
+		margin:20px 0;
+}
 pre{
 	padding: 15px;
-	/*overflow:scroll;*/
-	background-color: rgba(252,240,223,0.6);
+	overflow:scroll;
+	background-color: rgba(252,240,223,0.4);
 	border-radius: 8px;
 	border:1px solid #ccc;
-	margin:20px 0;
 	line-height: 1.5em;
 }
-pre span>.nx{
+code .nx{
 	color:black;
 }
-pre span>.kd{
+code .kd{
 	color:teal;
 }
-pre span>.s1{
+code .s1{
 	background-color: rgba(234,205,248,0.6);
 	color:#fc883a;
 }
@@ -103,13 +105,12 @@ blockquote{
 p code{
 	padding-left:10px;
 	padding-right: 10px;
-	color:#1256f0;
-	background-color: #f5da91;
+	color:black;
+	background-color: rgba(248,128,229,0.5);
 	opacity:0.5;
 	border-radius: 5px;
 	font-size: 14px;
 	line-height: 1.8em;
-	font-style: italic;
 }
 
 footer{
