@@ -116,7 +116,9 @@ app.get('/users', function(req, res){
 ```
 $ curl -X GET http://localhost:3000/users
 
-{"users":[{"_id":"584b62b830a2a2cbf4c4c3f6","username":"billie66","email":"billie@billie66.com"},{"_id":"584b760498d7b520b68a05cd","username":"pppaaa"},{"_id":"584bb045ff8f0f1c7ba4fe24","username":"inCode","email":"inCode@incode.com","__v":0}]}
+{"users":[{"_id":"584b62b830a2a2cbf4c4c3f6","username":"billie66","email":"billie@billie66.com"},
+{"_id":"584b760498d7b520b68a05cd","username":"pppaaa"},
+{"_id":"584bb045ff8f0f1c7ba4fe24","username":"inCode","email":"inCode@incode.com","__v":0}]}
 ```
 这样，后台代码就准备完毕。
 
