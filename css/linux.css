@@ -61,7 +61,7 @@ section h3{
 	color:#14877E;
 	line-height: 25px;
 }*/
-.highlight{
+pre{
 	padding: 15px;
 	/*overflow:scroll;*/
 	background-color: rgba(252,240,223,0.6);
@@ -70,13 +70,13 @@ section h3{
 	margin:20px 0;
 	line-height: 1.5em;
 }
-pre span .nx{
+pre span>.nx{
 	color:black;
 }
-pre span .kd{
+pre span>.kd{
 	color:teal;
 }
-pre span .s1{
+pre span>.s1{
 	background-color: rgba(234,205,248,0.6);
 	color:#fc883a;
 }
