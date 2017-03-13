@@ -85,18 +85,18 @@ code .s1{
 code .kr{
 	color:red;
 }
-code .mi{
+/*code .mi{
 	color:#25f8c9;
-}
+}*/
 code .no{
 	color:#e63f52;
 }
 code .s2{
 	color:#009fa8;
 }
-code .err{
+/*code .err{
 	background-color: #25f8c9;
-}
+}*/
 ul{
 	padding-left: 30px;
 

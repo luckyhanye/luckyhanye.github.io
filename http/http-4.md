@@ -53,7 +53,7 @@ Vary: Accept-Encoding
 
 响应主体，response body ，也可以叫做 payload 。在我们前面的例子中，响应主体就是这些：
 
-```ruby
+```js
 <!DOCTYPE html>
 <html>
 <head>
@@ -68,3 +68,7 @@ Vary: Accept-Encoding
 </body>
 </html>
 ```
+
+### 总结
+
+请求的基本格式与响应的基本格式有着高度的一致性。
