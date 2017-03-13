@@ -64,7 +64,7 @@ section h3{
 .language-js,.highlighter-rouge{
 		padding: 15px;
 		margin:20px 0;
-		overflow:scroll;
+		/*overflow:scroll;*/
 }
 pre{
 	background-color: rgba(252,240,223,0.4);
@@ -93,6 +93,9 @@ code .no{
 }
 code .s2{
 	color:#009fa8;
+}
+code .err{
+	background-color: #25f8c9;
 }
 ul{
 	padding-left: 30px;
