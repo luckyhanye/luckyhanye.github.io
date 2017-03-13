@@ -45,5 +45,50 @@ name: happypeter
 
 意思就是：
 
+```
 查询字符串参数
 name: happypeter
+```
+这些数据会作为请求的一部分，发送给服务器的。服务器端的框架，例如 express 有自己的办法去得到这些参数值， 至于服务器端代码如何使用这些参数，那就是自由的了。
+
+### 传递多个参数
+
+也可以传递多组参数的，每组之间以 `&` 隔开
+
+```
+http://haoqicat.com/?name=happypeter&email=peter@peter.com
+```
+
+Chrome 开发者工具右下角，此时就会看到两个参数了。
+
+甚至可以写成这样
+
+```
+?order=desc&shoe[color]=blue&shoe[type]=converse
+```
+
+服务器端如果是 express ，就可以很方便的用 req.query 来 难道传递过来的参数。
+
+如果我想添加一个备用邮箱，可以使用`+`来进行连接
+
+```
+?name=peter&email=happypeter1983@gmail.com+b@b.com
+```
+
+注意现在 Chrome 右下角的参数，email 这一项就是两个值了。
+
+### 一个实例
+
+```
+http://stackoverflow.com/search?q=http
+```
+
+这样，可以打开的页面是 stackoverflow 搜索 `http` 这个关键词之后的搜索结构页面。
+
+### 总结
+
+实际中查询字符串还是比较实用的，因为它简单明了，但是功能比较有限，而且连接中明文传递也不安全，只能用在简单场合。
+
+### 参考
+
+[teamtreehouse]() 的课程
