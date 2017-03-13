@@ -25,7 +25,7 @@ layout: linux
 
 我们先打开 `mongo-express` ，拷贝一个真实的 id 出来。然后粘贴到 前台代码的 `axios` 请求中
 
-```
+```js
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import axios from 'axios';
@@ -69,7 +69,7 @@ ReactDOM.render(<App/>,document.getElementById('app'));
 
 src/index.js
 
-```
+```js
 const express =  require('express');
 const app = express();
 const cors = require('cors');
@@ -102,7 +102,7 @@ app.listen(3000, function(){
 
 models/user.js
 
-```
+```js
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
@@ -117,7 +117,7 @@ module.exports = mongoose.model('User', UserSchema);
 
 package.json
 
-```
+```ruby
 {
   "name": "express-hello",
   "version": "1.0.0",
