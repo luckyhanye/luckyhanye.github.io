@@ -13,7 +13,7 @@ layout: linux
 
 参考代码：
 
-```
+```js
 //子组件文件
 
 export default class Test extends React.Component{

@@ -11,7 +11,7 @@ layout: linux
 
 `event`有如下属性：
 
-```
+```js
 
 - boolean bubbles
 

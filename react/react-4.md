@@ -15,7 +15,6 @@ layout: linux
   render()        //渲染
 
   componentDidMount()   //首次渲染之后
-
   ```
 
 - 2、更新阶段（`state`,`props`发生变化是触发）

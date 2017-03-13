@@ -115,12 +115,11 @@ section p a{
 	text-decoration:none;
 }
 blockquote{
-	background-color: #badce6;
+	background-color: rgba(78,254,214,0.5);
 	border-radius:5px;
 	color:#f59358;
 	padding: 15px 30px;
 	margin-bottom: 20px;
-	opacity:0.6;
 	line-height: 1.5em;
 }
 
