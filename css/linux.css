@@ -75,7 +75,7 @@ pre{
 code .nx{
 	color:#6f041b;
 }
-code .kd{
+code .kd,code .cm{
 	color:#1e9407;
 }
 code .s1{
