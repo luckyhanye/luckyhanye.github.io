@@ -7,7 +7,7 @@ layout: linux
 
 用 react ,首先要引入`react 文件`，参考如下：
 
-```
+```ruby
 import React from 'react';
 import ReactDOM from 'react-dom';
 ```
@@ -94,7 +94,7 @@ ReactDOM.render(  //`render`是`ReactDOM`中的方法，就是把某个`DOM`节�
 
   参考代码：
 
-  ```
+  ```js
   import React from 'react';  //引入react
   import ReactDOM from 'react-dom';  //引入react-dom
 
@@ -114,7 +114,7 @@ ReactDOM.render(  //`render`是`ReactDOM`中的方法，就是把某个`DOM`节�
 
   参考代码：
 
-  ```
+  ```js
   import React from 'react';
   import ReactDOM from 'react-dom';
 
@@ -135,7 +135,7 @@ ReactDOM.render(  //`render`是`ReactDOM`中的方法，就是把某个`DOM`节�
 
   参考代码：
 
-  ```
+  ```js
   import React from 'react';
   import ReactDOM from 'react-dom';
 
@@ -162,7 +162,7 @@ ReactDOM.render(  //`render`是`ReactDOM`中的方法，就是把某个`DOM`节�
 
 1、第一重文件导出
 
-```
+```js
 // sigin.js  文件
 
 import React from 'react';
@@ -200,7 +200,7 @@ export default Logo   //默认导出“Logo”
 
 2、第一重文件引入/第二重文件导出
 
-```
+```js
 import React from 'react';
 
 import Logo from './logo.js'       //第一重文件引入
@@ -222,7 +222,7 @@ export default Header;     // 第二重文件导出  默认导出“Header”   
 
 3、第三重文件引入
 
-```
+```js
 import React from 'react';
 
 import Header from './header'    
@@ -242,7 +242,7 @@ export default App;  //默认导出
 ```
 4、入口文件 "index.js"
 
-```
+```js
 import React from 'react';
 import ReactDOM from 'react-dom';
 
@@ -258,7 +258,7 @@ ReactDOM.render(
 
 参考代码：
 
-```
+```js
 import React from 'react';
 
 class Signin extends React.Component{
@@ -301,7 +301,7 @@ $ npm install --save-dev style-loader css-loader less-loader
 
 进行webpack配置。 代码清单：`webpack.config.js`
 
-```
+```js
 module.exports={
   entry:'./src/index.js',
   output:{
@@ -323,7 +323,7 @@ module.exports={
 
 引入代码：
 
-```
+```js
 import "./main.css"
 ```
 
@@ -331,7 +331,7 @@ import "./main.css"
 
 进行webpack配置。 代码清单：`webpack.config.js`
 
-```
+```ruby
 module.exports={
   entry:'./src/index.js',
   output:{
@@ -355,7 +355,7 @@ module.exports={
 
 加载图片代码写法：
 
-```
+```js
 import url from '../link/111.jpg';   //引入图片原路径，同时会打包到build里面
 
 class Logo extends React.Component{

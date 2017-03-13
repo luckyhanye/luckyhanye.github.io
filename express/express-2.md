@@ -243,7 +243,7 @@ Access-Control-Allow-Origin: *
 
 保证后台启动状态，现在我们看看当前后台资源的 header 设置，可以用下面的 curl 命令
 
-```
+```js
 $ curl -I http://localhost:3000/username
 HTTP/1.1 200 OK
 X-Powered-By: Express
