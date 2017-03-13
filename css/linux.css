@@ -88,6 +88,12 @@ code .kr{
 code .mi{
 	color:#25f8c9;
 }
+code .no{
+	color:#e63f52;
+}
+code .s2{
+	color:#009fa8;
+}
 ul{
 	padding-left: 30px;
 
