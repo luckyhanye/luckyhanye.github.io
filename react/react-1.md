@@ -331,7 +331,7 @@ import "./main.css"
 
 进行webpack配置。 代码清单：`webpack.config.js`
 
-```ruby
+```js
 module.exports={
   entry:'./src/index.js',
   output:{

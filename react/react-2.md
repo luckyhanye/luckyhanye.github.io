@@ -10,7 +10,7 @@ layout: linux
 react 组件状态 state，控制组件内部状态，组件内部状态变化，界面也会随之变化更新
 
 
-```
+```js
 import React from 'react';
 
 class App extends React.Component{   //创建类 App
@@ -58,7 +58,7 @@ class App extends React.Component{   //创建类 App
 
 - 随机选取
 
-  ```
+  ```js
   import React from "react";
 
   let place=["北京","上海","秦皇岛","天津","大理","云南","三亚","桂林"]   //定义一个数组，为选取的内容
@@ -101,7 +101,7 @@ class App extends React.Component{   //创建类 App
   ```
 - 选项卡
 
-  ```
+  ```js
   import React from "react";
 
   class SelectBar extends React.Component{
