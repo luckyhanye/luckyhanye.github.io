@@ -105,6 +105,9 @@ ul li{
 	line-height: 25px;
 	color:#64686a;
 }
+section strong{
+	color:balck;
+}
 section p a{
 	text-decoration:none;
 }
