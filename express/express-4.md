@@ -24,14 +24,14 @@ Mongoose 是一个 JS 库，作用是把 MongoDB 的数据，封装成 JS 对象
 安装到后台 express 代码中，装包命令：
 
 ```
-npm install --save mongoose
+$ npm install --save mongoose
 ```
 
 装包成功后，一般的步骤就是先导如，后调用。
 
 打开 express-backend 的 index.js 文件，导入 mongoose
 
-```
+```js
 const mongoose = require('mongoose');
 ```
 
@@ -39,16 +39,17 @@ const mongoose = require('mongoose');
 
 然后进行连接,添加如下代码
 
-```
+```js
 mongoose.connect('mongodb://localhost:27017/react-express-demo');
 
 // 执行此行代码之前，要保证 mongodb 数据库已经运行了，而且运行在 27017 端口
 ```
+
 启动数据库，保证有一个 database（数据库） 叫做 react-express-demo 。
 
 然后添加下面代码
 
-```
+```js
 let db = mongoose.connection;
 db.on('error', console.log);
 db.once('open', function() {
@@ -62,7 +63,7 @@ db.once('open', function() {
 
 创建一个专门的　models/user.js ，里面代码的作用是，实现一个对象跟一个数据集合之间映射关系。
 
-```
+```js
 let mongoose = require('mongoose');
 let Schema = mongoose.Schema;
 
@@ -91,7 +92,7 @@ module.exports = mongoose.model('User', UserSchema);
 
 把　db.once 部分的代码，改成下面这个样子
 
-```
+```js
 db.once('open', function() {
    let user = new User({username: 'Hanye', email: 'hanye@hanye.com'});
    user.save(function(err){
@@ -114,7 +115,7 @@ db.once('open', function() {
 Mongoose: mpromise (mongoose's default promise library) is deprecated, plug in your own promise library
 解决办法是在连接 MongoDB 数据库 mongoose.connect(...); 之前，添加一行代码：
 
-```
+```js
 mongoose.Promise = global.Promise;
 ```
 
@@ -124,7 +125,7 @@ mongoose.Promise = global.Promise;
 
 index.js 如下
 
-```
+```js
 const express =  require('express');
 const app = express();
 const cors = require('cors');
@@ -139,7 +140,7 @@ mongoose.connect('mongodb://localhost:27017/digicity');
 
 // 执行此行代码之前，要保证 mongodb 数据库已经运行了，而且运行在 27017 端口
 
-```
+```js
 let db = mongoose.connection;
 db.on('error', console.log);
 db.once('open', function() {
@@ -153,7 +154,7 @@ db.once('open', function() {
 
 // 下面三行就是我们实现的一个 API
 
-```
+```js
 app.get('/username', function(req, res){
   res.json({"username": "happypeter"});
 })
@@ -180,7 +181,7 @@ module.exports = mongoose.model('User', UserSchema);
 
 package.json 如下
 
-```
+```js
 {
   "name": "express-hello",
   "version": "1.0.0",

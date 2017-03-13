@@ -14,7 +14,7 @@ $ npm install --save react-router
 ```
 创建路由组件，实例如下：
 
-```
+```js
 import React from "react"
 import {Router,Route,hashHistory,browserHistory,Redirect,IndexRoute} from "react-router"
 
@@ -47,6 +47,7 @@ class App extends React.Component{
 
 export default App
 ```
+
 `IndexRoute`即处理页面初始进入时候的组件展示，等路由切换的时候，再根据其他路由规则进行组件的切换展示。
 
 `hashHistory`  给我们的路径添加'/#/'防止浏览器跳转到其他页面，始终拿到的是'index.html',不需要服务器支持
@@ -72,7 +73,7 @@ import {Link} from "react-router"
 
 参考代码：
 
-```
+```js
 import React, { Component } from 'react';
 import { Router, Route, hashHistory, Link, IndexRoute } from 'react-router';
 

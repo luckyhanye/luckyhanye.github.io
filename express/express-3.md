@@ -37,14 +37,14 @@ layout: linux
 直接运行命令
 
 ```
-sudo apt-get install mongodb
+$ sudo apt-get install mongodb
 ```
 
 这个是安装的深度公司服务器上的 mongodb 。可能版本比较老。
 
 可以按照这里的步骤 安装比较新的版本：
 
-```
+```js
 $ sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80
 --recv 0C49F3730359A14518585931BC711F9BA15703C6
 
@@ -68,7 +68,7 @@ brew install mongodb
 
 启动 mongodb
 
-```
+```js
 mkdir -p data/db
 mongod --dbpath=./data/db
 ```
@@ -98,7 +98,7 @@ mongo
 
 第一步，创建一个数据库
 
-```
+```js
 $ use react-express-demo
 switched to db react-express-demo     //切换到 react-express-demo 数据库中
 ```
@@ -117,7 +117,7 @@ show dbs
 
 创建集合，集合名称叫 users 。
 
-```
+```js
 db.createCollection('users')
 { "ok" : 1 }
 ```
@@ -125,7 +125,7 @@ db.createCollection('users')
 
 - 第三步，把一条数据，保存成一条文档（ Document ）
 
-  ```
+  ```js
   db.users.insert({username: 'luchyhnaye', email: 'hanye_1001@sina.com' })
   WriteResult({ "nInserted" : 1 })
   ```
@@ -134,7 +134,7 @@ db.createCollection('users')
 
 第四步，列出一个集合中的所有文档：
 
-```
+```js
 db.users.find({})
 ```
 
@@ -203,7 +203,7 @@ $ npm list -g mongo-express    //查找 mongo-express 所在路径
 
 找到安装位置后，就可以进入安装文件夹，来修改配置文件了。
 
-```
+```js
 cd /usr/local/lib
 cd node_modules
 cd mongo-express
@@ -214,7 +214,7 @@ cp config.default.js config.js
 
 打开配置文件，把
 
-```
+```js
 mongo = {
   db:       'db',
   username: 'admin',
@@ -226,7 +226,7 @@ mongo = {
 
 改为
 
-```
+```js
 mongo = {
   db:       'react-express-demo',
   username: '',
@@ -246,7 +246,7 @@ show dbs
 
 同时，mongo-express 的密码有默认值，通过　config.js 中这几行：
 
-```
+```js
 basicAuth: {
   username: process.env.ME_CONFIG_BASICAUTH_USERNAME || 'admin',
   password: process.env.ME_CONFIG_BASICAUTH_PASSWORD || 'pass',
@@ -263,7 +263,7 @@ $ mongo-express
 
 在深度 Linux 上，输出如下
 
-```
+```js
 Mongo Express server listening at http://localhost:8081
 basicAuth credentials are "admin:pass", it is recommended you change this in your config.js!
 Connecting to digicity...
@@ -277,7 +277,7 @@ Connecting to digicity...
 
 首先，切换到要删除的数据库 ，test
 
-```
+```js
 $ use test  
 
 switched to db react-express-demo     //切换到 test 数据库成功
@@ -286,7 +286,7 @@ switched to db react-express-demo     //切换到 test 数据库成功
 
 然后删除数据库
 
-```
+```js
 db.dropDatabase()
 ```
 

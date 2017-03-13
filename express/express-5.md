@@ -29,7 +29,7 @@ layout: linux
 
 到后台代码的 index.js 文件中，把 db.once 部分的修改成下面这样：
 
-```
+```js
 db.once('open', function() {
   User.find().exec(function(err, users) {
     console.log(users);
@@ -39,7 +39,7 @@ db.once('open', function() {
 
 这样，我们到　express-backend 文件夹中，运行，可以看到如下输出结果
 
-```
+```js
 $ nodemon index.js
 
 running on port 3000...
@@ -56,7 +56,7 @@ running on port 3000...
 
 但是，我们为何不把代码写成这样呢？
 
-```
+```js
 let users = User.find();
 conole.log(users)
 ```
@@ -73,7 +73,7 @@ conole.log(users)
 
 先来做第一步，代码做出如下调整：
 
-```
+```js
 db.once('open', function() {
   console.log('success');
 });
@@ -95,14 +95,14 @@ curl -X GET http://localhost:3000/users
 
 但是，此时，curl 请求不到任何返回信息，因为　console.log(users) 只会把 信息打印到后台终端。curl 请求不到信息，未来浏览器也就请求不到。所以要把这一行 改为
 
-```
+```js
 // res.send() 可以数据返回给客户端，但是我们要的是　json ，所以用下面接口
 res.json()
 ```
 
 也就是要写成这样：
 
-```
+```js
 app.get('/users', function(req, res){
   // res.json({"users": "happypeter"});
   User.find().exec(function(err, users) {
@@ -113,7 +113,7 @@ app.get('/users', function(req, res){
 
 这样，再用　curl 请求一下，前台就能读到数据了，如下
 
-```
+```js
 $ curl -X GET http://localhost:3000/users
 
 {"users":[{"_id":"584b62b830a2a2cbf4c4c3f6","username":"billie66","email":"billie@billie66.com"},
@@ -126,7 +126,7 @@ $ curl -X GET http://localhost:3000/users
 
 express-backend 文件夹中，有下面的文件：
 
-```
+```js
 index.js
 
 const express =  require('express');
@@ -166,7 +166,7 @@ app.listen(3000, function(){
 
 models/user.js
 
-```
+```js
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
@@ -185,7 +185,7 @@ module.exports = mongoose.model('User', UserSchema);
 
 package.json
 
-```
+```js
 {
   "name": "express-backend",
   "version": "1.0.0",
@@ -209,7 +209,7 @@ package.json
 
 到　react-express-demo/　也就前台项目中，修改生命周期函数如下：
 
-```
+```js
 componentWillMount() {
   axios.get('http://localhost:3000/users').then((response) => {
     console.log(response);
@@ -220,7 +220,7 @@ componentWillMount() {
 
 这样，就可以看出　response 中的数据结构了，我们想要的数据可以这样拿到
 
-```
+```js
 constructor(){
   super();
   this.state = {
@@ -238,7 +238,7 @@ componentWillMount() {
 
 render 函数做如下调整：
 
-```
+```js
 render(){
   const userList = map((user) => {
     return (
@@ -260,7 +260,7 @@ render(){
 
 ### 前台代码
 
-```
+```js
 src/index.js
 
 import React, { Component } from 'react';
@@ -304,7 +304,7 @@ ReactDOM.render(<App/>,document.getElementById('app'));
 
 webpack.config.js 如下：
 
-```
+```js
 var path = require('path');
 
 module.exports = {
@@ -326,7 +326,7 @@ module.exports = {
 
 .babelrc 如下
 
-```
+```js
 {
   "presets": ["es2015", "react", "stage-0"],
   "plugins": []
@@ -335,7 +335,7 @@ module.exports = {
 
 index.html 如下：
 
-```
+```js
 <!DOCTYPE html>
 <html lang="en">
 <head>

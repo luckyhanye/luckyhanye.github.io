@@ -22,7 +22,7 @@ $ npm install antd --save
 ```
 要先引入标签组件才能使用，参考案例：
 
-```
+```js
 import { Button, Menu, Dropdown, Icon } from 'antd';
 
 function handleMenuClick(e) {
@@ -56,7 +56,7 @@ ReactDOM.render(
 
 代码案例：
 
-```
+```js
 import React from 'react';
 import AppBar from 'material-ui/AppBar';
 

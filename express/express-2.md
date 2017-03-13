@@ -54,7 +54,7 @@ ReactDOM.render(<App/>,document.getElementById('app'));
 
 package.json
 
-```ruby
+```js
 {
   "name": "hanye-demo",
   "version": "1.0.0",
@@ -107,7 +107,7 @@ module.exports={
 
 .babelrc
 
-```
+```js
 {
   "presets": ["env","react"]
 }
@@ -115,7 +115,7 @@ module.exports={
 
 index.html
 
-```ruby
+```js
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -164,7 +164,7 @@ curl -X GET http://localhost:3000/username
 
 如果后端代码没问题，应该可以看到下面的输出：
 
-```
+```js
 {username:'luckyhanye'}
 ```
 
@@ -191,7 +191,7 @@ $ npm install --save axios
 
 装包之后，就可以到 src/index.js 中去使用了，代码如下
 
-```
+```js
 import axios from 'axios';
 ```
 
@@ -208,7 +208,7 @@ componentWillMount() {
 
 代码进行到上面，浏览器中用前台请求后台，会在 chrome console 中看到，如下 错误：
 
-```
+```js
 XMLHttpRequest cannot load http://localhost:3000/. No 'Access-Control-Allow-Origin'
 header is present on the requested resource.
 Origin 'null' is therefore not allowed access.
@@ -261,12 +261,12 @@ curl 的 `-I` 选项用来拿到服务器返回的 header 。命令返回的信�
 到 https://www.npmjs.com/package/cors 可以看到装包命令如下：
 
 ```
-npm install --save cors
+$ npm install --save cors
 ```
 
 再次提醒：这个包要安装到后台代码中。
 
-```
+```js
 cors = require('cors')
 
 app.use(cors());
@@ -274,7 +274,7 @@ app.use(cors());
 
 然后按照文档，添加下面两行代码，再重启服务器代码：
 
-```
+```js
 HTTP/1.1 200 OK
 X-Powered-By: Express
 Access-Control-Allow-Origin: *
@@ -284,6 +284,7 @@ ETag: W/"b-sQqNsWTgdUEFt6mb5y4/5Q"
 Date: Thu, 08 Dec 2016 02:17:23 GMT
 Connection: keep-alive
 ```
+
 这样，我们就看到了 Access-Control-Allow-Origin: * 。
 
 浏览器中，刷新一下，可以看到后台返回的 response 数据了。错误没有了。
@@ -292,14 +293,15 @@ Connection: keep-alive
 
 后台代码中，添加下面两个 API
 
-```
+```js
 app.get('/username', function(req, res){
   res.json({"username": "happypeter"});
 })
 ```
+
 对应，到前台代码中，调整 componentWillMount ，如下：
 
-```
+```js
 componentWillMount() {
   axios.get('http://localhost:3000/username').then(function(response){
       return console.log(response.data.username);
@@ -311,9 +313,10 @@ componentWillMount() {
 ```
 luckyhanye
 ```
+
 下面进一步调整 componentWillMount 如下：
 
-```
+```js
 componentWillMount() {
   axios.get('http://localhost:3000/username').then(function(response){
       return this.setState({username: response.data.username});
@@ -331,7 +334,7 @@ bind(this) 的[视频](http://haoqicat.com/o-o-js/2-2-this): http://haoqicat.com
 
 这里呢，我们直接给出解决方法，就是使用 ES6 的箭头函数：
 
-```
+```js
 componentWillMount() {
   axios.get('http://localhost:3000/username').then((response) => {
       this.setState({username: response.data.username});

@@ -28,7 +28,7 @@ $ npm install express --save
 ```
 注意：一个常见装包错误，如果我们项目文件夹的名和要装的包名同名，例如
 
-```
+```js
 mkdir express    //项目文件夹
 cd express
 npm init -y
@@ -37,7 +37,7 @@ npm install --save express     //安装的包
 
 安装就会失败，报错信息为：
 
-```
+```js
 Refusing to install express as a dependency of itself
 ```
 
@@ -55,7 +55,7 @@ Refusing to install express as a dependency of itself
 
 到项目中，创建一个 index.js 文件，内容如下：
 
-```
+```js
 const express =  require('express');
 const app = express();
 
@@ -68,7 +68,7 @@ app.listen(3000);
 
 上面的程序执行，到后台运行
 
-```
+```js
 node index.js
 ```
 
@@ -76,7 +76,7 @@ node index.js
 
 但是，现在运行的效果,没有输出内容，解决这个问题，我们就可以把 app.listen 部分修改成下面这样：
 
-```
+```js
 app.listen(3000, function(){
   console.log('running on port 3000...');
 });
@@ -84,7 +84,7 @@ app.listen(3000, function(){
 
 这样，后台执行的效果就是
 
-```
+```js
 $ node index.js
 running on port 3000...
 ```
@@ -95,7 +95,7 @@ running on port 3000...
 
 一般格式如下：
 
-```
+```js
 app.listen(3000, function(){
 
 });
@@ -108,7 +108,7 @@ app.listen(3000, function(){
 
 比如，我们在上面的 index.js 中，app.listen 语句的上面，添加如下代码：
 
-```
+```js
 app.get('/', function(){
   console.log('request come in...');
 })
@@ -122,7 +122,7 @@ app.get('/', function(){
 
 一个动词加一个路径，这样就组成一个 `HTTP` 请求 ，公式如下
 
-```
+```js
 request = verb + path + data
 ```
 
@@ -176,11 +176,12 @@ http://localhost:3000/
 
 前面的回调函数中，`console.log `打印字符串，只是出现在后端（服务器端）。前端得不到任何反馈。所以，我们可以把代码做如下修改
 
-```
+```js
 app.get('/', function(req, res){
   res.send('Hello World');
 })
 ```
+
 上面代码中 req 是 `request` 请求的简写， res 是 `response` 响应的简写 。`res.send('Hello World')`的作用是从后端向前端浏览器返回字符串 `Hello World` 。
 
 ### 总结
@@ -197,7 +198,7 @@ app.get('/', function(req, res){
 
 package.json 如下：
 
-```
+```js
 {
   "name": "express-hello",
   "version": "1.0.0",
@@ -217,13 +218,14 @@ package.json 如下：
 
 index.js 代码如下
 
-```
+```js
 const express =  require('express');
 const app = express();
 ```
 
 // 下面三行就是我们实现的一个 API
-```
+
+```js
 app.get('/', function(req, res){
   res.send('Hello World');
 })
@@ -235,7 +237,7 @@ app.listen(3000, function(){
 
 上面两个文件都放在一个 express-hello 文件夹中，然后
 
-```
+```js
 cd express-hello
 npm install
 node index.js

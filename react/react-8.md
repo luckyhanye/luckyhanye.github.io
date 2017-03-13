@@ -11,7 +11,7 @@ AJAX 是一种在无需重新加载整个网页的情况下，能够更新部分
 
 - 原生`AJAX    XMLHttpRequest()`
 
-```
+```js
 var ajax=new XMLHttpRequest();   //实例化一个XMLHttpRequest  对象
 console.log(ajax);
 
@@ -28,7 +28,7 @@ ajax.send()
 
 - `JQuery` AJAX    $.ajax({type:'POST',date:string,success:function(){}})
 
-```
+```js
 $.ajax({
   type:'GET',
   dataType:"json",
@@ -47,7 +47,7 @@ $.ajax({
 
 - `fetch`方法
 
-```
+```js
 fetch    fetch('请求地址'，{method:''}) .then(res=>res.json()).then(json=>do()).catch(err=.console.log(err))
 .then(res=>res.json())    //上一步收到的结果
 .then(json=>console.log(json);)   //上一步得到的结果
@@ -60,7 +60,7 @@ fetch('https://api.github.com/users/luckyhanye',{method:'GET'})
 
 - `axios` 方法
 
-```
+```js
 axios.get('https://api.github.com/users/luckyhanye')
   .then(res=>console.log("axiosGet=======",res))
   .catch(err=>console.log("axiosErr=======",err))
@@ -70,7 +70,7 @@ axios.get('https://api.github.com/users/luckyhanye')
 
 - `jquery` 方法
 
-```
+```js
 $.ajax({
   type:'POST',
   date:'string',
@@ -90,7 +90,7 @@ $.ajax({
 
 - `fetch`方法
 
-```
+```js
 fetch('https://cnodejs.org/api/v1/accesstoken',{
   method:'POST',
   headers:{'Content-Type':'application/json'},
@@ -104,7 +104,7 @@ fetch('https://cnodejs.org/api/v1/accesstoken',{
 
 - `axios` 方法
 
-```
+```js
 axios.post('https://cnodejs.org/api/v1/accesstoken', {
   accesstoken:'3f77acb1-d753-4393-b784-44913190e6a8',
       // firstName: 'Fred',
@@ -116,7 +116,7 @@ axios.post('https://cnodejs.org/api/v1/accesstoken', {
 
 ### 发送跨域请求：
 
-```
+```js
 跨域请求http 协议的规定就是，不同源之间不能进行资源共享
 https://github.com:80  这一段如果有不同的都叫跨域
 一般后台设置 `Access-Control-Allow-Origin:*`即可解决跨域问题
@@ -139,7 +139,7 @@ $.ajax({
 
 ###  JSON 语句方法
 
-```
+```js
 let arr={name:"lucy",age:13,};
 let json=JSON.stringify(arr)
 console.log(json);
