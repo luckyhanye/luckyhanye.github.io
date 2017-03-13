@@ -23,7 +23,7 @@ app.listen(3000, function(err) {
 
 ### 提供 index.html 的功能
 
-```
+```js
 +++ app.get('/', function(req, res){
 +++   res.sendFile('index.html');
 +++ });
@@ -36,7 +36,7 @@ app.listen(3000, function(err) {
 
 添加这些代码
 
-```
+```js
 app.use(express.static('public'));
 ```
 
@@ -44,7 +44,7 @@ app.use(express.static('public'));
 
 有了这一句
 
-```
+```js
 mkdir public
 mv index.html public/
 node server.js
@@ -52,7 +52,7 @@ node server.js
 
 就能正确的看到 localhost:3000/ 可以访问 index.js 了。
 
-```
+```js
 var express = require('express');
 var app = express();
 

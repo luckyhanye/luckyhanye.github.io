@@ -43,7 +43,7 @@ app.listen(3000, function(){
 
 然后，后台
 
-```
+```js
 node index.js
 ```
 
@@ -59,7 +59,7 @@ curl -X GET localhost:3000 -v
 
 上面 -v 参数，表示”显示详情“ 。最终输出内容如下：
 
-```
+```js
 * Rebuilt URL to: localhost:3000/
 * Hostname was NOT found in DNS cache
 *   Trying ::1...
@@ -95,7 +95,7 @@ hello world%
 
 响应头，如下
 
-```
+```js
 < HTTP/1.1 200 OK
 < X-Powered-By: Express
 < Content-Type: text/html; charset=utf-8
@@ -106,7 +106,7 @@ hello world%
 ```
 响应主体：
 
-```
+```js
 hello world%
 ```
 

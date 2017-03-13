@@ -11,7 +11,7 @@ layout: linux
 
 第一行的内容被叫做请求行 （ Request Line ） ，具体形式如下
 
-```
+```js
 GET/POST [url] HTTP/[version]   GET / HTTP/1.1
 ```
 
@@ -21,7 +21,7 @@ GET/POST [url] HTTP/[version]   GET / HTTP/1.1
 
 请求行下面的内容就是请求的头部了。英文叫做 Headers ，注意是复数。也就是这一项下面可以有多个 header 。
 
-```
+```js
 [header 名]：[header 值]
 ```
 

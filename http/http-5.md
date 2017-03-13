@@ -32,23 +32,24 @@ http://haoqicat.com/?name=happypeter
 
 此时，Network 标签下会看到，页面发出了多个请求，点第一个，也就是
 
-```
+```js
 ?name=happypeter
 ```
 
 这个请求，在 chrome 开发者工具的右下角，可以看到：
 
-```
+```js
 Query String Parameters
 name: happypeter
 ```
 
 意思就是：
 
-```
+```js
 查询字符串参数
 name: happypeter
 ```
+
 这些数据会作为请求的一部分，发送给服务器的。服务器端的框架，例如 express 有自己的办法去得到这些参数值， 至于服务器端代码如何使用这些参数，那就是自由的了。
 
 ### 传递多个参数
@@ -63,7 +64,7 @@ Chrome 开发者工具右下角，此时就会看到两个参数了。
 
 甚至可以写成这样
 
-```
+```js
 ?order=desc&shoe[color]=blue&shoe[type]=converse
 ```
 
@@ -71,7 +72,7 @@ Chrome 开发者工具右下角，此时就会看到两个参数了。
 
 如果我想添加一个备用邮箱，可以使用`+`来进行连接
 
-```
+```js
 ?name=peter&email=happypeter1983@gmail.com+b@b.com
 ```
 
@@ -79,7 +80,7 @@ Chrome 开发者工具右下角，此时就会看到两个参数了。
 
 ### 一个实例
 
-```
+```js
 http://stackoverflow.com/search?q=http
 ```
 

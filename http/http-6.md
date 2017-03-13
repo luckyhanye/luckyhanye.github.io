@@ -11,7 +11,7 @@ layout: linux
 
 现在我想请求一个具体的用户，通常会发这样的请求
 
-```
+```js
 GET /users/12345
 ```
 
@@ -39,7 +39,7 @@ app.listen(3000, function(){
 
 后台运行
 
-```
+```js
 node index.js
 ```
 
@@ -49,7 +49,7 @@ node index.js
 
 使用 curl 来发出请求
 
-```
+```js
 curl -X GET localhost:3000/users/12345
 ```
 

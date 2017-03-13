@@ -63,7 +63,7 @@ section h3{
 }*/
 .language-js,.highlighter-rouge{
 		margin:20px 0;
-		/*overflow:scroll;*/
+		overflow:scroll;
 }
 pre{
 	padding: 15px;
@@ -119,7 +119,7 @@ blockquote{
 	border-radius:5px;
 	color:#f59358;
 	padding: 15px 30px;
-	margin-bottom:20px 0;
+	margin:20px 0;
 	line-height: 1.5em;
 }
 
