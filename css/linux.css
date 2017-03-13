@@ -73,7 +73,7 @@ pre{
 	line-height: 1.5em;
 }
 code .nx{
-	color:#595757;
+	color:#6f041b;
 }
 code .kd{
 	color:#1e9407;
@@ -125,7 +125,7 @@ p code{
 	padding-left:10px;
 	padding-right: 10px;
 	color:black;
-	background-color: rgba(248,128,229,0.5);
+	background-color: rgba(170,200,250,0.5);
 	border-radius: 5px;
 	font-size: 14px;
 	line-height: 1.8em;
