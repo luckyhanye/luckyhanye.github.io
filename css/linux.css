@@ -73,7 +73,7 @@ pre{
 	line-height: 1.5em;
 }
 code .nx{
-	color:#6f041b;
+	color:#9409bc;
 }
 code .kd,code .cm{
 	color:#1e9407;
@@ -93,6 +93,9 @@ code .no{
 }
 code .s2{
 	color:#009fa8;
+}
+code .c1{
+	color:#5b6770;
 }
 /*code .err{
 	background-color: #25f8c9;
