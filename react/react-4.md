@@ -7,7 +7,7 @@ layout: linux
 
 - 1、初始化，首次渲染
 
-  ```
+  ```js
   constructor()     //获取实例初试状态
 
   componentWillMount()    //首次渲染之前
@@ -20,7 +20,7 @@ layout: linux
 
 - 2、更新阶段（`state`,`props`发生变化是触发）
 
-  ```
+  ```js
   componentWillReceiveProps()   //属性被修改前
 
   shouldComponentUpdate()      //判断是否需要更新
@@ -34,6 +34,6 @@ layout: linux
 
 - 3、销毁
 
-  ```
+  ```js
   componentWillUnmount()      //销毁前
   ```

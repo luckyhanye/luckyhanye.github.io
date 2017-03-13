@@ -11,7 +11,7 @@ layout: linux
 
 下面代码展示了，如何通过`props`来传递组件的
 
-```
+```js
 //通用组件
 
 import React from "react"
@@ -73,7 +73,7 @@ props 特点
 
 参考代码如下：
 
-```
+```js
 // 设置默认属性
 
 Card.defaultProps={    //默认属性设置
@@ -98,7 +98,7 @@ Card.propTypes={
 
 参考代码：
 
-```
+```js
 //父组件
 
 class App extends React.Component{
