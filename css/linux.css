@@ -63,10 +63,10 @@ section h3{
 }*/
 .language-js,.highlighter-rouge{
 		margin:20px 0;
-		overflow:scroll;
 }
 pre{
 	padding: 15px;
+	overflow:scroll;
 	background-color: rgba(252,240,223,0.4);
 	border-radius: 8px;
 	border:1px solid #ccc;
