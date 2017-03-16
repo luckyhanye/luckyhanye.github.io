@@ -62,11 +62,9 @@ section h3{
 	color:#14877E;
 	line-height: 25px;
 }*/
-.language-js,.highlighter-rouge{
-		margin:20px 0;
-}
 pre{
 	padding: 15px;
+	margin:20px 0;
 	overflow:hidden;
 	background-color: rgba(252,240,223,0.4);
 	border-radius: 8px;
@@ -119,15 +117,16 @@ section p a{
 	text-decoration:none;
 }
 blockquote{
-	font-size: 15px;
 	background-color: rgba(173,216,246,0.3);
 	border-radius:5px;
-	color:#f59358;
 	padding: 15px 30px;
 	margin:20px 0;
-	line-height: 1.5em;
 }
-
+blockquote p{
+	font-size: 15px;
+	color:red;
+	line-height: 1.6em;
+}
 p code{
 	padding-left:10px;
 	padding-right: 10px;
