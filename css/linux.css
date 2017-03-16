@@ -119,7 +119,8 @@ section p a{
 	text-decoration:none;
 }
 blockquote{
-	background-color: rgba(78,254,214,0.2);
+	font-size: 15px;
+	background-color: rgba(173,216,246,0.3);
 	border-radius:5px;
 	color:#f59358;
 	padding: 15px 30px;
