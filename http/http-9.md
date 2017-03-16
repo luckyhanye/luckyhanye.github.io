@@ -36,46 +36,35 @@ curl -H "Content-Type: application/json" -X POST -d '{"username":"hanye"}' http:
 
 ### 前台实现 axios 代码
 
-
-
-
-
-###
-
 react 代码如下：
 
-index.js
-
 ```js
-import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
-import axios from 'axios';
+import React from "react"
+import ReactDOM from "react"
+import axios from 'axios'
 
-class App extends Component {
-  constructor() {
+class App extends React.Component{
+  constructor(){
     super();
-    this.state = {
-      user: {},
-      msg: "plz login"
-    };
+    this.state={
+      name:'',
+      msg:'',
+    }
   }
-  _handleSubmit(e){
+  handleSubmit(e){
     e.preventDefault();
-    const username = this.refs.username.value;
-    console.log(username);
-    axios.post('http://tiger.haoduoshipin.com/login', {username}).then(res => {
-      console.log(res);
-      this.setState({msg: res.data.msg});
-    })
+    let username=this.refs.username.value;
+    axios.post('http://tiger.haoduoshipin.com/login',{username})
+      .then(res=>this.setState({msg:res.data.msg}))
   }
   render(){
     return(
       <div>
-        <div>{this.state.msg}</div>
-        <form onSubmit={this._handleSubmit.bind(this)}>
-          <input ref="username" />
-          <input type="submit" />
+        <form onSubmit={this.handleSubmit.bind(this)}>
+          <input type="text" ref="username"/>
+          <button>提交</button>
         </form>
+        <div style={{marginTop:"20px"}}>{this.state.msg}</div>
       </div>
     )
   }
@@ -84,13 +73,15 @@ class App extends Component {
 ReactDOM.render(<App/>, document.getElementById('app'));
 ```
 
-这样就可以发送跟前面 curl 命令一样效果的请求了。 chrome 中查看，请求 Headers 中有：
+
+这样就可以发送跟前面 curl 命令一样效果的请求了。 chrome 中查看，请求头部 **Headers** 中有：
 
 ```js
-Content-Type:application/json;charset=UTF-8
+Content-Type:application/json; charset=utf-8
 ```
 
 表示 axios 的数据，默认就是按照 application/json 发送的。
+
 
 ### 总结
 
