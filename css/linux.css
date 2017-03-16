@@ -67,7 +67,7 @@ section h3{
 }
 pre{
 	padding: 15px;
-	overflow:scroll;
+	overflow-x:scroll;
 	background-color: rgba(252,240,223,0.4);
 	border-radius: 8px;
 	border:1px solid #ccc;
