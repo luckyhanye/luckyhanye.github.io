@@ -69,7 +69,7 @@ req.session.username = username
 
 ### 命令如下：
 
-```
+```ruby
 $ curl -v -X POST -H "Content-Type: application/json" -d '{"username": "hanye"}' http://tiger.haoduoshipin.com/login
 > POST /login HTTP/1.1
 > Host: localhost:3005
@@ -83,10 +83,18 @@ $ curl -v -X POST -H "Content-Type: application/json" -d '{"username": "hanye"}'
 hanye%
 ```
 
-上面信息重要是分两部分：请求和响应，具体来说：
+上面信息重要是分两部分：**请求** 和 **响应**，具体来说：
 
-请求部分可以看到发出的请求是 POST /login Content-Type: application/json {"username": "hanye"} 这个是符合 API 规范的，所以应该能够得到正确的返回
-响应的第一行 < HTTP/1.1 200 OK ，200 表示一切正常
+请求部分可以看到发出的请求是
+
+```js
+POST /login Content-Type: application/json {"username": "hanye"}
+```
+
+这个是符合 API 规范的，所以应该能够得到正确的返回
+
+响应的第一行 `< HTTP/1.1 200 OK ，200` 表示一切正常
+
 set-cookie 是我们要查看的重点，我们可以看到 req.session 接口可以正确的返回 sessionId 给浏览器
 浏览器中的行为
 
@@ -105,7 +113,7 @@ app.use(session({
 }))
 
 app.get('/login', function(req, res){
-  req.session.username = 'peter';
+  req.session.username = 'hanye';
   res.send(req.session.username);
 })
 
@@ -123,9 +131,9 @@ app.listen(3003, function(){
 
 req.session 可以认为是一个可以跨越请求始终存在的变量。
 
-只要用户访问了 GET /login ，之后再去访问 /foo 和 /bar 也依然可以读取到 req.session.username 的值。Easy!
+只要用户访问了 `GET /login` ，之后再去访问 /foo 和 /bar 也依然可以读取到 `req.session.username` 的值。Easy!
 
-单页面应用中 Cookie 使用不方便了
+### 单页面应用中 Cookie 使用不方便了
 
 涉及到跨域问题，在 React-Axios 环境下，收发 cookie 默认都是不允许的，所以 req.session 的使用意义不大了。
 
