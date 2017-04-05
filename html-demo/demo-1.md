@@ -1,5 +1,5 @@
 ---
-title: html基础知识
+title: 基础知识
 layout: linux
 ---
 
