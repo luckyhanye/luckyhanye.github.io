@@ -9,14 +9,9 @@ layout: linux
 
 代码展示：
 
-```js
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>表格</title>
+`css样式`
+
+```css
   <style>
     body,ul{
       padding: 0;
@@ -68,9 +63,11 @@ layout: linux
     .dialog ul li:nth-child(2){
       margin:0 20px;
     }
-  </style>
-</head>
-<body>
+```
+
+`html代码`
+
+```html
   <div class="dialog" style="width:380px;margin:0 auto;margin-top:50px">
     <h3>账单</h3>
     <div class="subtitle clearfix">
@@ -129,6 +126,4 @@ layout: linux
       <li>核算<span></span></li>
     </ul>
   </div>
-</body>
-</html>
 ```
