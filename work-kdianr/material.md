@@ -28,28 +28,28 @@ layout: linux
 
 ### PHP2016 传智系列
 
-链接：http://pan.baidu.com/s/1i50LID3 
+链接：[http://pan.baidu.com/s/1i50LID3](http://pan.baidu.com/s/1i50LID3) 
 
 密码：p9oz
 解压密码：www.mukedaba.com_B4K2^cds_8B9442D
 
 ### 黑马大数据JAVAEE
 
-链接：http://pan.baidu.com/s/1slKqI1v 
+链接：[http://pan.baidu.com/s/1slKqI1v](http://pan.baidu.com/s/1slKqI1v) 
 
 密码：qel5
 解压密码：访问www.mukedAbA.com学习jAvA
 
 ### Javaweb1-6月就业班
 
-链接：http://pan.baidu.com/s/1qXFwYc8 
+链接：[http://pan.baidu.com/s/1qXFwYc8](http://pan.baidu.com/s/1slKqI1v) 
 
 密码：2agp
 解压密码：www.mukedaba.com
 
 ### Python魔鬼训练营系列教程
 
-链接：http://pan.baidu.com/s/1bpvNRyv 
+链接：[http://pan.baidu.com/s/1bpvNRyv](http://pan.baidu.com/s/1slKqI1v) 
 
 密码：xj8z
 解压密码：python@mukEdaba.cOm
