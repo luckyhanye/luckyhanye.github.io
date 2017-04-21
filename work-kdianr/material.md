@@ -7,21 +7,21 @@ layout: linux
 
 ### 2016黑马一期  +  OC基础班 （基础不牢固的点这里）
 
-链接：http://pan.baidu.com/s/1kVhr0ov 
+链接：[http://pan.baidu.com/s/1kVhr0ov](http://pan.baidu.com/s/1kVhr0ov )
 
 密码：1qot
 解压密码：www.mukedaba.com
 
 ### swift 3.0 (学习的点这里，刀哥主讲)
 
-链接: https://pan.baidu.com/s/1qXV6QoG 
+链接: [https://pan.baidu.com/s/1qXV6QoG](https://pan.baidu.com/s/1qXV6QoG) 
 
 密码: a9sd
 解压密码：HttP://www.mUkedaba.com/#Swift
 
 ### C++（学习的点这里 尹成主讲）
 
-链接：http://pan.baidu.com/s/1c1ZYiFQ 
+链接：[http://pan.baidu.com/s/1c1ZYiFQ](http://pan.baidu.com/s/1c1ZYiFQ)
 
 密码：4fh4
 解压密码：智峰www.mukedaba.com互联
