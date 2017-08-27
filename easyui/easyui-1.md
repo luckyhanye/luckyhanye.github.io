@@ -1,5 +1,5 @@
 ---
-title:
+title: easyui基础知识
 layout: linux
 ---
 
