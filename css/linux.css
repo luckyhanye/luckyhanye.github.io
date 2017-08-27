@@ -136,7 +136,12 @@ p code{
 	font-size: 14px;
 	line-height: 1.8em;
 }
-
+span nt{
+	color:#df7118;
+}
+span o{
+	color:#09d974;
+}
 footer{
 	background-image: url(../images/contact_03.jpg);
 	margin-top: 10px;
