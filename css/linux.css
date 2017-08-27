@@ -145,7 +145,7 @@ pre.highlight code span.cp{
 pre.highlight code span.na{
 	color:green;
 }
-pre.highlight code span.s{
+pre.highlight code span.s,pre.highlight code span.nl{
 	color:orange;
 }
 footer{
