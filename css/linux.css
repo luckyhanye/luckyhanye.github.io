@@ -140,10 +140,10 @@ pre.highlight code span.nt{
 	color:teal;
 }
 pre.highlight code span.cp{
-	color:blue;
+	color:orange;
 }
 pre.highlight code span.na{
-	color:green;
+	color:lightBlue;
 }
 pre.highlight code span.s,pre.highlight code span.nl{
 	color:orange;
