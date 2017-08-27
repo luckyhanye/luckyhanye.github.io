@@ -11,4 +11,4 @@ layout: linux
 
 - 示意图
 
-![alt ""](../images/pageLayout.png)
+![alt ""](../images/pageLayout-01.png)
