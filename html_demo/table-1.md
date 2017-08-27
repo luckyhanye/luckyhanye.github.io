@@ -127,3 +127,6 @@ layout: linux
     </ul>
   </div>
 ```
+财务表格样式：
+
+![alt ""](../images/table_finance.png)
