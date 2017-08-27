@@ -22,7 +22,7 @@ layout: linux
 
 代码展示
 
-```html
+```css
   <!DOCTYPE html>
   <html lang="en">
   <head>
