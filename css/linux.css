@@ -137,10 +137,16 @@ p code{
 	line-height: 1.8em;
 }
 pre.highlight code span.nt{
-	color:#df7118;
+	color:blue;
 }
-pre.highlight code span.o{
+pre.highlight code span.cp{
 	color:#09d974;
+}
+pre.highlight code span.na{
+	color:teal;
+}
+pre.highlight code span.s{
+	color:red;
 }
 footer{
 	background-image: url(../images/contact_03.jpg);
