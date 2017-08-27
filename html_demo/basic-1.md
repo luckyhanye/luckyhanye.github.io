@@ -27,7 +27,7 @@ layout: linux
   <html lang="en">
   <head>
     <meta charset="UTF-8">
-    <title>寒叶笔记</title>
+    <title>标题</title>
     <link rel="stylesheet" href="css/index.css">
     <link rel="icon" type="image/x-icon" href="https://luckyhanye.github.io/images/favicon.ico">
 

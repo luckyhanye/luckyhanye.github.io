@@ -136,10 +136,10 @@ p code{
 	font-size: 14px;
 	line-height: 1.8em;
 }
-code span.nt{
+pre.highlight code span.nt{
 	color:#df7118;
 }
-code span.o{
+pre.highlight code span.o{
 	color:#09d974;
 }
 footer{
