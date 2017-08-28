@@ -5,6 +5,8 @@ layout: linux
 
 ## html基础知识
 
+- 参考网站：[w3school](http://www.w3school.com.cn/)
+
 ### 页面构成
 
 头部（header）、主体（content/main）、底部（footer）
@@ -37,3 +39,9 @@ layout: linux
   </body>
   </html>
 ```
+
+### 元素分类
+
+- 块元素  特点：独立成行，宽度自适应，标签可以直接嵌套，（`<p>`标签内不能套`<div>`）例如：`<div>`,`<p>`,`<ul>`, `table`等
+- 行元素  特点：不独立成行，不能设置大小，标签内部不能嵌套行属性标签，例如：`<a>`,`<span>`,`<i>`等
+- 行级块元素  特点：不独立成行，但是能设置大小(行元素通过`display:inline-block`可转换成)，例如：`<img>`
