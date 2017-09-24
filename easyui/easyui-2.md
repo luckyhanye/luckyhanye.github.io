@@ -267,3 +267,33 @@ layout: linux
       }
   }
 ```
+
+### datagrid 中editor下的日期比较
+
+```js
+$("#datagridCostInfoDetail_parkingLot").datagrid("getColumnOption", 'PBH065').editor = {
+    type: 'datebox',
+    options: {
+        editable:false,
+        onShowPanel:function(){
+            $('.datagrid-editable-input').datebox().datebox('calendar').calendar({     //通过类名拿到datebox
+                validator:function(date) {
+                    if (date < newStartDate || date > newEndDate) {
+                        return false;
+                    } else {
+                        return true;
+                    }
+                }
+            })
+        }
+    }
+};
+```
+
+### tabs加载页面
+
+```js
+var panelOptions = $('#respository_material').tabs('getSelected').panel("options");
+    panelOptions.href = _CPMS_ + '/Respository/index_materialList/flag/'+'0';   //“index_materialList”是要加载的页面 “flag”参数名 “0” 值
+    
+```
